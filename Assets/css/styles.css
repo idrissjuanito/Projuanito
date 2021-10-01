@@ -9,7 +9,7 @@
 	padding: 0;
 }
 body {
-	height: 700px;
+	height: 100vh;
 	display: flex;
 	align-items: flex-end;
 	background-image: url(../images/5684783.jpg);
@@ -28,9 +28,7 @@ h1{
 }
 
 @media (max-width: 900px){
-	body{
-		height: 800px;
-	}
+	
 	h1{
 		font: 75px "Gemunu Libre", sans-serif;
 	}
