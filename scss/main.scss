@@ -1,0 +1,43 @@
+@use 'variables' as *;
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'montserrat', sans serif;
+}
+a{
+    text-decoration: none;
+    color: $white;
+    cursor: pointer;
+}
+h1, h2, h3{
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+li{
+    list-style-type: none;
+}
+.container{
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+header{
+    background-color: $black;
+    color: $white;
+    height: 500px;
+    background-image: url('/images/hd-bg.jpg');
+    background-size: cover;
+    background-position: top center no-repeat;
+    .logo{
+        max-width: 90px;
+    }
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
