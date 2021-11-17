@@ -6,27 +6,191 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Pro Juanito</title>
 	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="icon" href="/images/icons/pj-favicon.png" type="image/png">
 </head>
 <body>
 	<header>
-		<div class="container">
 			<div class="navbar">
-					<a href="#"><img src="images/pj-logo.png" alt="" class="logo"></a>
-					<div class="nav">
+				<a href="#"><img src="images/pj-logo.png" alt="" class="navbar__logo"></a>
+				<div class="nav">
+					<ul>
+						<li> <a href="#">Home</a></li>
+						<li> <a href="#">About me</a></li>
+						<li> <a href="#">Projects</a></li>
+						<li> <a href="#">Blog</a></li>
+						<li> <a href="#">Contacts</a></li>
+					</ul>
+				</div>
+				<div class="social-icons">
+					<a href=""><i class="fab fa-twitter fa-2x"></i></a>
+					<a href=""><i class="fab fa-github fa-2x"></i></a>
+					<a href=""><i class="fab fa-linkedin fa-2x"></i></a>
+				</div>
+				<a href="#" class="menu-icon"><i class="fas fa-bars fa-2x"></i></a>
+			</div>
+			<div class="hero">
+				<div class="container">
+					<div class="hero__intro">
+						<h1>Hi! I'm <span>ProJuanito<span></h1>
+						<p>This is my playground and i can do anything i want here. Well, since i love tech i will mostly be playing digital stuffs. Have lots of content to share with you. Take your time on here and explore all i’ve got for you.</p>
+					</div>
+					<div class="hero__right">
+					</div>
+				</div>
+			</div>
+	</header>
+	<main>
+			<div class="about">
+				<div class="container">
+					<div class="about__left">
+						<div class="card">
+							<h2>About me</h2>
+							<p>So i am this tech saavy guy, very knowledgeable on a broad range of tech fields, data processing to graphics design, web development, trading, digital marketing and the list goes on. Am not and expert in most of these fieds but i can say for sure that i am a web developper and content creator.
+							So i am this tech saavy guy, very knowledgeable on a broad range of tech fields, data processing to graphics design, web development, trading, digital marketing and </p>
+							<a href="">There's more</a>
+						</div>
+					</div>
+					<div class="about__right">
 						<ul>
-							<li>Home</li>
-							<li>About me</li>
-							<li>Projects</li>
-							<li>Blog</li>
-							<li>Contacts</li>
+							<li class="profile-pic"></li>
+							<li class="card">
+								<i class="fa fa-file-code fa-2x"></i>
+								<h3>Web Developper</h2>
+							</li class="card">
+							<li class="card">
+								<i class="fa fa-bullhorn fa-2x"></i>
+								<h3>Digital Marketer</h2>
+							</li>
+							<li class="card">
+								<img src="/images/icons/man.svg" alt="" class="person-icon">
+								<h3>IT Consultant</h2>
+							</li>
 						</ul>
 					</div>
 				</div>
-			<div class="hero-section">
-				<h1>Hi! I'm Pro Juanito</h1>
-				<p>I am a savvy, web developper and digital marketing expert (Blogging, SEO)</p>
+			</div>
+			<div class="daily-tools">
+				<div class="container">
+					<h2>My Daily Tools</h2>
+					<div class="tools grid">
+						<div class="card tool">
+							<img src="/images/icons/google.png" alt="google">
+							<p>Google Search</p>
+						</div>
+						<div class="card tool">
+							<img src="/images/icons/wordpress.png" alt="google">
+							<p>Wordpress</p>
+						</div>
+						<div class="card tool">
+							<img src="/images/icons/figma.svg" alt="google">
+							<p>Figma</p>
+						</div>
+						<div class="card tool">
+							<img src="/images/icons/bitcoin.png" alt="google">
+							<p>Bitcoin</p>
+						</div>
+						<div class="card tool">
+							<img src="/images/icons/vscode.png" alt="google">
+							<p>Visual Studio Code</p>
+						</div>
+						<div class="card tool">
+							<img src="/images/icons/trading.png" alt="google">
+							<p>Trading View</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		<div class="projects">
+			<div class="container">
+				<h2>My Works</h2>
+				<div class="project-list">
+					<div class="project-list__item">
+						<img src="/images/cmsmount.png" alt="">
+						<h3>cmsmount.com</h3>
+						<small>Web Development</small>
+						<ul class="item-tools">
+							<li><img src="/images/icons/wordpress.png" alt=""></li>
+							<li><img src="/images/icons/ux-ui-logo.svg" alt=""></li>
+						</ul>
+					</div>
+					<div class="project-list__item">
+						<img src="images/footballsparkle.png" alt="">
+						<h3>footballsparkle.com</h3>
+						<small> blogging</small>
+						<ul class="item-tools">
+							<li><img src="/images/icons/wordpress.png" alt=""></li>
+							<li><img src="/images/icons/ux-ui-logo.svg" alt=""></li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
-	</header>
+		<div class="blogposts">
+			<div class="container">
+				<h2>Blog Posts</h2>
+				<div class="posts">
+					<div class="card post">
+						<h3><a href="#">How to safely invest into Crypto</a></h3>
+						<p>I talk here about crypto curencies and the opportinities the bring to the table as regards investment</p>
+						<div class="post__data">
+							<div class="author">
+								<i class="fas fa-user-circle"> <span>Tchoffo Idriss</span></i>
+							</div>
+							<div class="date">
+								<i class="fas fa-calendar-alt"><span>1 day ago</span>	</i>
+							</div>
+						</div>
+					</div>
+					<div class="card post">
+						<h3><a href="#">How to safely invest into Crypto</a></h3>
+						<p>I talk here about crypto curencies and the opportinities the bring to the table as regards investment</p>
+						<div class="post__data">
+							<div class="author">
+								<i class="fas fa-user-circle"> <span>Tchoffo Idriss</span></i>
+							</div>
+							<div class="date">
+								<i class="fas fa-calendar-alt"> <span>1 day ago</span></i>
+							</div>
+						</div>
+					</div>
+					<div class="card post">
+						<h3><a href="#">How to safely invest into Crypto</a></h3>
+						<p>I talk here about crypto curencies and the opportinities the bring to the table as regards investment</p>
+						<div class="post__data">
+							<div class="author">
+								<i class="fas fa-user-circle"> <span>Tchoffo Idriss</span></i>
+							</div>
+							<div class="date">
+								<i class="fas fa-calendar-alt"><span>1 day ago</span></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div class="container">
+			<p>idriss.tchoffo@projuanito.com</p>
+			<div class="social-icons flex">
+				<a href=""><i class="fab fa-twitter fa-2x"></i></a>
+				<a href=""><i class="fab fa-github fa-2x"></i></a>
+				<a href=""><i class="fab fa-linkedin fa-2x"></i></a>
+			</div>
+			<div class="subscribe">
+				<p>Subscribe to my newsletter and get updates on hot topics</p>
+				<input type="text" name="" placeholder="Email Address">
+				<input type="button" value="Subscribe">
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<small>Copyright &copy; 2015-2021 Afrosilicon</small>
+			<ul>
+				<li><a href="#"><small>Terms & Conditions</small></a></li>
+				<li><a href="#"><small>Privacy Policy</small></a></li>
+			</ul>
+		</div>
+	</footer>
 </body>
 </html>

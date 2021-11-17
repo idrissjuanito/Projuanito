@@ -1,43 +1,409 @@
 @use 'variables' as *;
+@use 'mixins' as *;
+@import 'animations';
+
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 body{
-    font-family: 'montserrat', sans serif;
+    max-width: 100%;
+    @include font('montserrat');
+    color: $white;
+    background-color: $primary;
+}
+img{
+    max-width: 100%;
 }
 a{
+    @include font('nova square');
     text-decoration: none;
     color: $white;
+    display: inline-block;
+    padding: .8rem 0;
     cursor: pointer;
 }
 h1, h2, h3{
-    font-size: 2rem;
-    padding: 1rem 0;
+    @include font('nova square');
+    font-weight: 200;
+}
+h2{
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1em;
+}
+h3{
+    font-size: 1.3em;
 }
 li{
     list-style-type: none;
 }
+p{
+    font-size: 1.2rem;
+    font-weight: 200;
+    line-height: 1.6em;
+    padding: 1rem 0;
+}
 .container{
-    width: 100%;
-    max-width: 1140px;
+    width: 90%;
+    max-width: 1460px;
     margin: 0 auto;
+    padding: 3rem 0;
+    overflow: hidden;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    align-items: center;
+    gap: 1rem;
+}
+.card{
+    width: 100%;
+    background-color: $secondary;
+    margin: 1rem 0;
+    border-radius: 10px;
 }
 
+.fa-file-code{
+    color: #21759B;
+}
+.fa-bullhorn{
+    color: #EB5E03;
+}
+.person-icon{
+    width: 1.3em;
+}
 header{
-    background-color: $black;
+    @include mq-min($big){
+        @include flex(center, space-between);
+    }
+    background-color: $primary;
     color: $white;
-    height: 500px;
-    background-image: url('/images/hd-bg.jpg');
+    height: 600px;
+    background: radial-gradient(farthest-corner at 40px 300px, #000 0%, rgba(0, 0, 0, .8) 90%), url('/images/bg-hero.jpg') no-repeat bottom center;
     background-size: cover;
-    background-position: top center no-repeat;
-    .logo{
-        max-width: 90px;
+    overflow: hidden;
+}
+
+.navbar{
+    padding: .5rem 1.2rem;
+    @include mq-min($big){
+        position: relative;
+        height: 600px;
+        flex-basis: 10%;
+        align-self: flex-start;
+        animation: slide-in-left 1s ease-out;
     }
+    &__logo{
+        max-width: 50px;
+        margin-bottom: 2rem;
+    }
+
+    a:hover{
+        color: $accent;
+    }
+    .social-icons{
+        @include flex(flex-start, space-between);
+        gap: 1.5rem;
+        a{
+            padding: 0;
+        }
+        @include mq-min($big){
+            flex-direction: column;
+            position: absolute;
+            bottom: 20px;
+        }
+    }
+    .menu-icon{
+        display: none;
+    }
+}
+
+.hero{
+        flex-basis: 88%;
+        .container{
+            @include flex(center, flex-start);
+        }
+        p{
+            padding-bottom: 5rem;
+            width: 90%;
+            font-size: 1.4rem;
+            animation: fade-in-bottom 2s ease-out;
+        }
+    &__intro{
+        flex-basis: 60%;
+    }
+    &__right{
+        flex-basis: 40%;
+    }
+    h1{
+        font-size: 4.2rem;
+        font-weight: 400;
+        animation: fade-in 2s ease-in-out;
+    }
+    span{
+        color: $accent;
+    }
+}
+
+.about{
+    width: 100%;
+    &__left{
+        flex-basis: 60%;
+        h2{
+            margin-bottom: .4rem;
+            @include mq-min($big){
+                text-align: left;
+            }
+        }
+        .card{
+            padding: 2rem 3rem;
+            a{
+                color: $accent;
+            }
+            a:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+    @include mq-min($big){
+        .container{
+            @include flex(flex-end, space-between);
+            position: relative;
+            padding-bottom: 0;
+            overflow: visible;
+        }
+        &__right{
+            flex-basis: 35%;
+            position: absolute;
+            top: -100;
+            right: 0;
+        }
+    }
+    &__right{
+        .profile-pic{
+            height: 28rem;
+            background: linear-gradient(160deg, rgba(0, 0, 0, 0.3), 30%, $primary), url('/images/juanito.jpg') no-repeat center;
+            background-size: cover;
+            border-radius: 10px;
+        }
+
+        li + li{
+            @include flex(center, flex-start);
+            height: 5rem;
+            gap: 2rem;
+            margin-top: 1rem;
+            padding: 1rem 6rem;
+        }
+        li > i, 
+        li > img{
+            width: 1.3rem;
+        }
+    }
+}
+
+.tools{
+    .tool{
+        flex-direction: column;
+        @include flex(center, center);
+        height: 10rem;
+        padding: 1rem;
+        transition: all 500ms ease-in-out;
+        &:hover{
+            transform: scale(1.02);
+            box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.2);
+        }
+        p{
+            font-size: 1rem;
+            font-weight: 400;
+            text-align: center;
+        }
+    }
+    img{
+        max-width: 80%;
+        height: 40%;
+    }
+}
+
+.projects{
+    background-color: $accent;
+    text-align: center;
+    .project-list{
+        @include flex(center, space-between);
+        flex-wrap: wrap;
+        color: $secondary;
+        &__item{
+            flex-basis: 47%;
+            height: 550px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 1.5rem 1.5rem 3rem;
+            & > img{
+                // border: 1px solid $lightaccent;
+                border-radius: 10px;
+                margin-bottom: 1.3rem;
+                box-shadow:  0 0 9px 1px rgba(0, 0, 0, 0.2);
+            }
+            small{
+                color: $lightaccent;
+                font-size: 1rem;
+            }
+        }
+        h3{
+            font-size: 1.6rem;
+        }
+        ul{
+            padding-top: 1.5rem;
+            @include flex(center, center);
+            gap: 1rem;
+            img{
+                width: 80px;
+                max-height: 80px;
+            }
+        }
+    }
+}
+.posts{
+    @include flex(center, space-between);
+    flex-wrap: wrap;
+    .post{
+        padding: 2rem;
+        flex-basis: 32%;
+        &__data{
+            @include flex(center, flex-start);
+            gap: 1rem;
+            font-size: .7rem;
+            color: $lightaccent;
+        }
+        span{
+            margin: 0 .3rem;
+            @include font('montserrat');
+            font-weight: 400;
+        }
+        p{
+            font-size: 1.1rem;
+            line-height: 1.4;
+            color: $grey;
+        }
+        a{
+            padding: 0 0;
+        }
+        a:hover{
+            color: $grey;
+        }
+    }
+}
+footer{
+    margin-top: 2rem;
     .container{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        padding: 1rem 0 2rem;
+        @include flex();
+        flex-direction: column;
+        border-top: 1px solid $grey;
+        p{
+            font-weight: 400;
+        }
     }
+    .social-icons{
+        a{
+            margin: 0 .6rem;
+        }
+    }
+    .subscribe{
+        max-width: 350px;
+        text-align: center;
+        @include font('Nova Square');
+        p{
+            line-height: 1.2em;
+            color: $lightaccent;
+            font-weight: bold;
+        }
+        input[type='text']{
+            width: 70%;
+            font-size: 1rem;
+            padding: 1rem;
+        }
+        input[type='button']{
+            color: $white;
+            @include font('Nova Square');
+            border: none;
+            padding: 1.6rem;
+            margin-left: -2rem;
+            background-color: $accent;
+        }
+    }
+    .footer-bottom{
+        padding: 0 5%;
+        background-color: $accent;
+        @include flex(center, space-between);
+        font-size: .8rem;
+        a{
+            @include font('Montserrat');
+        }
+        li{
+            display: inline-block;
+        }
+        li:first-child{
+            margin-right: 1.5rem;
+        }
+    }
+}
+
+@include mq-max($small){
+    .card{
+        text-align: center;
+    }
+    header {
+        .hero{
+            text-align: center;
+            flex-basis: 100%;
+            .container{
+                flex-direction: column;
+            }
+            p{
+                width: 100%;
+            }
+        }
+    }
+    .navbar {
+        @include flex(center, space-between);
+        height: 6rem;
+        .nav{
+            display: none;
+        }
+        .navbar__logo{
+            margin: 0;
+        }
+        .menu-icon{
+            display: inline;
+        }
+    } 
+    .about__right{
+        li + li{
+            padding: 2rem 4rem;
+        }
+    }
+    .project-list{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .posts .post{
+        flex-basis: 100%;
+    }
+    .about__left .card{
+        padding: 2rem 1rem;
+    }
+    .tools .card{
+        margin: 0;
+    }
+    .posts .post__data{
+        justify-content: center;
+    }
+    footer .footer-bottom{
+        padding: 0 2%;
+        li:first-child{
+            margin-right: .8rem;
+        }
+    } 
 }
