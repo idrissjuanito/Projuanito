@@ -1,0 +1,33 @@
+@use 'variables' as *;
+
+.container{
+    width: 90%;
+    max-width: 1460px;
+    margin: 0 auto;
+    padding: 3rem 0;
+    overflow: hidden;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    align-items: center;
+    gap: 1rem;
+}
+.card{
+    width: 100%;
+    background-color: $secondary;
+    margin: 1rem 0;
+    border-radius: 10px;
+}
+.card.reveal{
+    animation: fade-in-bottom 2s ease-in-out forwards;
+}
+.fa-file-code{
+    color: #21759B;
+}
+.fa-bullhorn{
+    color: #EB5E03;
+}
+.person-icon{
+    width: 1.3em;
+}
