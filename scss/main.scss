@@ -56,7 +56,7 @@ header{
     background-color: $primary;
     color: $white;
     height: 600px;
-    background: radial-gradient(farthest-corner at 40px 300px, #000 0%, rgba(0, 0, 0, .6) 90%), url('/Images/bg-hero.jpg') no-repeat bottom center;
+    background: radial-gradient(farthest-corner at 40px 300px, #000 0%, rgba(0, 0, 0, .6) 90%), url('Images/bg-hero.jpg') no-repeat bottom center;
     background-size: cover;
     overflow: hidden;
 }
@@ -248,7 +248,7 @@ header{
     &__right{
         .profile-pic{
             height: 28rem;
-            background: linear-gradient(160deg, rgba(0, 0, 0, 0.3), 30%, $primary), url('/Images/juanito.jpg') no-repeat center;
+            background: linear-gradient(160deg, rgba(0, 0, 0, 0.3), 30%, $primary), url('Images/juanito.jpg') no-repeat center;
             background-size: cover;
             border-radius: 10px;
         }
