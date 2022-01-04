@@ -1,5 +1,7 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;700&family=Nova+Square&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+@import 'variables';
+@import 'mixins';
 @import 'animations';
 @import 'utilities';
 
@@ -61,7 +63,7 @@ header{
     background-color: $primary;
     color: $white;
     height: 600px;
-    background: radial-gradient(farthest-corner at 40px 300px, #000 0%, rgba(0, 0, 0, .6) 90%), url('/images/bg-hero.jpg') no-repeat bottom center;
+    background: radial-gradient(farthest-corner at 40px 300px, #000 0%, rgba(0, 0, 0, .6) 90%), url('../Images/bg-hero.jpg') no-repeat bottom center;
     background-size: cover;
     overflow: hidden;
 }
@@ -81,8 +83,8 @@ header{
         margin-bottom: 2rem;
     }
     .nav a > :first-child {
-        // display: none;
-        max-width: 1.3rem;
+        display: none;
+        max-width: 1.6rem;
         font-size: 1.3rem;
         margin-right: .5rem;
     }
@@ -253,7 +255,7 @@ header{
     &__right{
         .profile-pic{
             height: 28rem;
-            background: linear-gradient(160deg, rgba(0, 0, 0, 0.3), 30%, $primary), url('/images/juanito.jpg') no-repeat center;
+            background: linear-gradient(160deg, rgba(0, 0, 0, 0.3), 30%, $primary), url('../Images/juanito.jpg') no-repeat center;
             background-size: cover;
             border-radius: 10px;
         }
@@ -526,6 +528,9 @@ footer{
             transform: translateX(-50%);
             top: 14rem;
             z-index: 11;
+            a > :first-child{
+                display: none;
+            }
             ul{
                 font-size: 1.8rem;
                 text-align: center;
@@ -592,9 +597,9 @@ footer{
         justify-content: center;
     }
     footer .footer-bottom{
-        padding: 0 2%;
+        padding: 0 3%;
         li:first-child{
-            margin-right: .8rem;
+            margin-right: .4rem;
         }
     } 
 }
