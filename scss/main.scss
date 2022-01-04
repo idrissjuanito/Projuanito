@@ -46,6 +46,11 @@ p{
     line-height: 1.6em;
     padding: 1rem 0;
 }
+i span{
+    margin: 0 0.1rem;
+    @include font('montserrat');
+    font-weight: 600;
+}
 
 // ===================== Header Section ================================
 
@@ -341,18 +346,13 @@ header{
     .post{
         padding: 2rem;
         flex-basis: 32%;
-        &__data{
-            @include flex(center, flex-start);
-            margin-top: 1rem;
-            gap: .5rem;
-            font-size: .675rem;
-            color: $grey;
-        }
-        span{
-            margin: 0 0.1rem;
-            @include font('montserrat');
-            font-weight: 600;
-        }
+        // &__data{
+        //     @include flex(center, flex-start);
+        //     margin-top: 1rem;
+        //     gap: .5rem;
+        //     font-size: .675rem;
+        //     color: $grey;
+        // }
         p{
             font-size: 1rem;
             line-height: 1.5;
@@ -367,7 +367,56 @@ header{
         }
     }
 }
+.post__data{
+    @include flex(center, flex-start);
+    margin-top: 1rem;
+    gap: .5rem;
+    font-size: .675rem;
+    color: $grey; 
+}
 
+.post-content{
+    display: none;
+    position: fixed;
+    top: 3%;
+    left: 10%;
+    right: 10%;
+    bottom: 2%;
+    color: $secondary;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.2);
+    overflow: scroll;
+    animation: slide-in-bottom 500ms ease-in-out forwards;
+    .container{
+        width: 80%;
+        margin-top: 3rem;
+    }
+    .close-icon{
+        position: sticky;
+        top: 15px;
+        right: 40px;
+    }
+    .fa-times{
+        position: absolute;
+        right: 15px;
+        color: $accent;
+        opacity: .5;
+        cursor: pointer;
+    }
+    p{
+        color: $darkGrey;
+        margin-top: 2rem;
+        font-weight: 400;
+    }
+    .post__data{
+        color: $accent;
+        font-size: .8rem;
+    }
+    &.closed{
+        animation: slide-out-bottom 500ms ease-in-out forwards;
+    }
+}
 // ===================== Footer Section ================================
 
 footer{
