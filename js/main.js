@@ -23,7 +23,7 @@ function reveal(){
             }
         }
     }
-    if (aboutBound < 400){
+    if (aboutBound < 100){
         navbar.classList.add('fixed');
     }else{
         navbar.classList.remove('fixed');
