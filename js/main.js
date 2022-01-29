@@ -1,17 +1,23 @@
+const windowHeight = document.documentElement.clientHeight;
+let docTop = document.querySelector("body");
 const about = document.querySelector('.about');
 const containers = document.querySelectorAll('.container');
-const menuIcon = document.querySelector('.menu-icon');
+const menuIcon = document.querySelector('.menu-hamburger');
 const navbar = document.querySelector('.navbar');
+const projectSection = document.querySelector(".projects")
 const postsSection = document.querySelector(".posts");
 const postContent = document.querySelector('.post-content');
-const singlePostTitle = document.querySelector('.post-content__title');
-const singlePostData = document.querySelector(".post-content .post__data");
-const singlePostBody = document.querySelector('.post-content__body');
-const closeSingle = document.querySelector('.post-content i');
+const goBackTop = document.querySelector(".go-back-top");
+const footerPages = document.querySelector(".footer-bottom ul");
+
+
+menuIcon.addEventListener('click', closeNavigation);
+goBackTop.addEventListener("click", scrollBackTop);
+
+let posts = [];
+let pages = [];
 
 function reveal(){
-    const windowHeight = document.documentElement.clientHeight;
-    const navbar = document.querySelector('.navbar');
     const aboutBound = about.getBoundingClientRect().top;
     
     for(let container of containers){
@@ -23,54 +29,106 @@ function reveal(){
             }
         }
     }
+
+    const projectsTop = projectSection.getBoundingClientRect().top;
+
+    if(projectsTop <= windowHeight/2){
+        goBackTop.style.bottom = "5%";
+    }else{
+        goBackTop.style.bottom = "-5%";
+    }
+
     if (aboutBound < 100){
         navbar.classList.add('fixed');
     }else{
         navbar.classList.remove('fixed');
     }
 }
-menuIcon.addEventListener('click', () => {
-    navbar.classList.toggle('open');
-    if(!navbar.classList.contains('open')){
-        navbar.classList.add('slideOut');
-    }else{
-        navbar.classList.remove('slideOut');
-    }
-})
+
 document.addEventListener('scroll', reveal);
 
-let posts = [];
-async function getPosts(url){
-    let response = await fetch("../posts.json");
+function closeNavigation(){
+    const navLinks = document.querySelectorAll('.nav a');
+    navLinks.forEach((link) => link.removeEventListener('click', closeNavigation));
 
-    if(!response.ok && response.type !== "json"){
-        throw new Error("Http Error! Status: "+ response.status);
-    }
+    navbar.classList.toggle('open');
 
-    posts = await response.json();
-    for(let post of posts){
-        postCard(post);
+    if(navbar.classList.contains("open")){
+        navLinks.forEach((link) => link.addEventListener('click', closeNavigation));
     }
 }
-getPosts()
-    .catch(e => { console.log("there was an error while fetching the file your requested: "+ e.message);
-});
 
-function showPost(e){
-    for(post of posts){
+async function fetchData(){
+    try {
+        let response = await fetch("posts.json");
+    
+        if(!response.ok && response.type !== "json"){
+            throw new Error("Http Error! Status: "+ response.status);
+        }
+        
+
+        let allPosts = await response.json();
+
+        for(let post of allPosts){
+            if(post.type === "post"){
+                posts.push(post);
+            }else{
+                pages.push(post);
+            }
+        }
+        
+    } catch(error){
+        console.log("there was an error while fetching the file your requested: "+ error.message)
+    }
+}
+
+function showContent(e){
+    let type = e.target.getAttribute("type");
+
+    if(type == null){
+        return;
+    }
+
+    e.preventDefault();
+
+    let content;
+
+    switch(type){
+        case "page":
+            content = pages;
+            break;
+        case "post":
+            content = posts;
+        break;
+    }
+
+    for(let post of content){
         if(post.id === Number(e.target.parentElement.id)){
-            singlePostTitle.textContent = post.title;
-            singlePostBody.textContent = post.body;
-            singlePostData.innerHTML = `
-            <div class="author">
-                <i class="fas fa-user-circle"> <span>${post.author}&emsp;|</span></i>
+        
+        let singlePostData = `
+            <div class="post__data">
+                <div class="author">
+                    <i class="fas fa-user-circle"> <span>${post.author}&emsp;|</span></i>
+                </div>
+                <div class="date">
+                    <i class="fas fa-calendar-alt"> <span>  ${post.datePublished}</span></i>
+                </div>
+            </div>`;
+
+        postContent.innerHTML = `
+            <div class="close-icon">
+                <i class="fas fa-times fa-2x"></i>
             </div>
-            <div class="date">
-                <i class="fas fa-calendar-alt"> <span>  ${post.datePublished}</span></i>
+            <div class="container">
+                <h1 class="post-content__title">${post.title}</h1>
+                ${ post.type === "post" ?  singlePostData : "" }
+                <p class="post-content__body">${post.body}</p>
             </div>`;
         }
     }
+    
     postContent.style.display = "block";
+    const closeSingle = document.querySelector('.post-content i');
     closeSingle.addEventListener('click', () => {
         postContent.classList.add("closed");
         setTimeout(() => {
@@ -79,50 +137,54 @@ function showPost(e){
     });
 }
 
-let postCard = function(post){
-    const createDiv = document.createElement('div');
-
-    const card = createDiv;
-    card.classList.add("card", "post");
-
-    const postTitle = document.createElement('h3');
-    card.appendChild(postTitle);
-    const link = document.createElement('a');
-    link.href = '#';
-    link.textContent = post.title.slice(0, 50);
-    postTitle.appendChild(link);
-    postTitle.addEventListener('click', showPost);
-    postTitle.id = post.id;
-
-    const postBody = document.createElement('p');
-    postBody.textContent = post.body.slice(0, 120);
-    card.appendChild(postBody);
-
-    const postData = document.createElement('div');
-    postData.classList.add("post__data");
-    card.appendChild(postData);
-
-    const postAuthor = document.createElement('div');
-    postAuthor.classList.add("author");
-    postData.appendChild(postAuthor);
-
-    const authorIcon = document.createElement('i');
-    authorIcon.classList.add("fas", "fa-user-circle")
-    postData.appendChild(authorIcon);
-
-    const authorSpan = document.createElement('span');
-    authorSpan.innerHTML = `${post.author}&emsp;|  `;
-    authorIcon.appendChild(authorSpan);
-
-    const postDate = document.createElement('div');
-    postDate.classList.add('date');
-    const dateIcon = document.createElement('i');
-    dateIcon.classList.add("fas", "fa-calendar-alt");
-    postDate.appendChild(dateIcon);
-    const dateSpan = document.createElement('span');
-    dateSpan.textContent = post.datePublished;
-    dateIcon.appendChild(dateSpan);
-    postData.appendChild(postDate);
-
-    postsSection.appendChild(card);
+function scrollBackTop(){
+    window.scrollTo(0, 0);
 }
+
+let getPages = function(id){
+    let founds = [];
+    id.forEach( (index) => {
+        founds = founds.concat(pages.filter((page) => page.id === index));
+    });
+    return founds;
+}
+
+function footerPageList(){
+    const pageList = getPages([938399, 948394]);
+
+    pageList.forEach( (page) => {
+        footerPages.innerHTML +=
+            `<li id="${page.id}"><a href="#" type="page">${page.title}</a></li>`; 
+        });
+}
+
+let showPosts = function(){
+    let card;
+    
+    for(let post of posts){
+        card = `
+        <div class="post card">
+            <h3 id="${post.id}"><a href="#" type="${post.type}">${post.title.slice(0, 50)}</a></h3>
+            <p>${post.body.slice(0, 120)}</p>
+            <div class="post__data">
+                <div class="author">
+                    <i class="fas fa-user-circle"><span>${post.author}&emsp;|</span></i>
+                </div>
+                <div class="date">
+                    <i class="fas fa-calendar-alt"><span>${post.datePublished}&emsp;|</span></i>
+                </div>
+            </div>
+        </div>`
+        postsSection.innerHTML += card;
+    }
+}
+
+async function main(){
+    await fetchData();
+    showPosts();
+    footerPageList();
+    const postLink = document.querySelectorAll("a");
+    postLink.forEach( link => link.addEventListener("click", showContent));
+}
+
+main();

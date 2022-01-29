@@ -9,6 +9,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    transition: all 500ms linear;
 }
 body{
     max-width: 100%;
@@ -43,11 +44,12 @@ li{
     list-style-type: none;
 }
 p{
-    font-size: 1.3rem;
-    font-weight: 300;
-    line-height: 1.6em;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.9em;
     padding: 1rem 0;
 }
+
 i span{
     margin: 0 0.1rem;
     @include font('montserrat');
@@ -61,16 +63,16 @@ header{
         @include flex(center, space-between);
     }
     background-color: $primary;
-    color: $white;
     height: 600px;
     background: radial-gradient(farthest-corner at 40px 300px, #000 0%, rgba(0, 0, 0, .6) 90%), url('../Images/bg-hero.jpg') no-repeat bottom center;
     background-size: cover;
     overflow: hidden;
+    transition: all 300ms linear;
 }
 
 .navbar{
     padding: .5rem 1.2rem;
-    transition: all 300ms ease-in-out;
+    
     @include mq-min($big){
         position: relative;
         height: 600px;
@@ -105,35 +107,21 @@ header{
             bottom: 20px;
         }
     }
-    .menu-icon{
-        width: 40px;
-        max-height: fit-content;
-        display: none;
-        transition: all 1s ease-in-out;
-        span{
-            position: relative;
-            display: block;
-            width: 100%;
-            height: 4px;
-            border-radius: 2px;
-            background-color: $white;
-            &::before, &::after{
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 4px;
-                border-radius: 3px;
-                background-color: $white;
-            }
-            &::before{
-                transform: translateY(-12px);
-            }
-            &::after{
-                transform: translateY(12px);
-            }
-        }
+}
+
+.menu-hamburger{
+    display: none;
+    width: 30px;
+
+    span{
+        height: 3px;
+        width: 100%;
+        border-radius: 1px;
+        background-color: $white;
+        // margin: 5px;
     }
 }
+
 .navbar.fixed{
     position: fixed;
     background-color: $primary;
@@ -168,23 +156,18 @@ header{
 
 .hero{
     flex-basis: 86%;
-    .container{
-        @include flex(center, flex-start);
-    }
+    padding: 0 3rem;
+    align-self: flex-start;
+
     p{
+        text-align: center;
         padding-bottom: 5rem;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         animation: fade-in-bottom 2s ease-out;
     }
-    &__intro{
-        flex-basis: 62%;
-    }
-    &__right{
-        flex-basis: 38%;
-    }
+
     h1{
-        max-width: fit-content;
-        position: relative;
+        text-align: center;
         font-size: 4.2rem;
         font-weight: 400;
         animation: fade-in 2s ease-in-out;
@@ -220,7 +203,7 @@ header{
 .about{
     width: 100%;
     &__left{
-        flex-basis: 60%;
+        flex-basis: 63%;
         h2{
             margin-bottom: .4rem;
             @include mq-min($big){
@@ -248,7 +231,7 @@ header{
         &__right{
             flex-basis: 35%;
             position: absolute;
-            top: -100;
+            top: -50;
             right: 0;
         }
     }
@@ -288,7 +271,6 @@ header{
             // box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.2);
         }
         p{
-            font-size: 1rem;
             font-weight: 400;
             text-align: center;
         }
@@ -387,12 +369,14 @@ header{
     color: $secondary;
     background: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.2);
     overflow: scroll;
     animation: slide-in-bottom 500ms ease-in-out forwards;
+
     .container{
-        width: 80%;
-        margin-top: 3rem;
+        width: 90%;
+        margin-top: 1rem;
+        padding-left: 1rem;
+        padding-right: .6rem;
     }
     .close-icon{
         position: sticky;
@@ -407,6 +391,7 @@ header{
         cursor: pointer;
     }
     p{
+        font-size: 1rem;
         color: $darkGrey;
         margin-top: 2rem;
         font-weight: 400;
@@ -443,12 +428,15 @@ footer{
         @include font('Nova Square');
         p{
             line-height: 1.2em;
-            color: $lightaccent;
+            color: $white;
         }
         input[type='text']{
             width: 70%;
             font-size: 1rem;
             padding: 1rem;
+            &:focus{
+                outline: none;
+            }
         }
         input[type='button']{
             color: $white;
@@ -457,6 +445,10 @@ footer{
             padding: 1.6rem;
             margin-left: -2rem;
             background-color: $accent;
+            cursor: pointer;
+            &:hover{
+                transform: scale(0.96);
+            }
         }
     }
     .footer-bottom{
@@ -476,17 +468,50 @@ footer{
     }
 }
 
+.go-back-top{
+    @include flex(center, space-evenly);
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    right: 2%;
+    background-color: $white;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    span{
+        display: block;
+        background-color: $accent;
+        height: 70%;
+        width: 4px;
+        border-radius: 3px;
+    }
+    span:first-child{
+        transform: rotate(45deg);
+    }
+    span:last-child{
+        transform: rotate(-45deg);
+    }
+}
+
 // ===================== Media Queries ================================
 
 @include mq-max($small){
+    h1{
+        font-size: 1.5rem;
+    }
     .card{
         text-align: center;
     }
+    .container{
+        padding: 2.5rem 0;
+    }
     header {
         transition: all 1s ease-in-out;
+        overflow: visible;
         .hero{
             text-align: center;
             flex-basis: 100%;
+            padding: 0;
             .container{
                 flex-direction: column;
             }
@@ -495,78 +520,94 @@ footer{
             }
         }
     }
+    .about__left{
+        p{
+            font-size: 1rem;
+        }
+    }
     .navbar {
         @include flex(center, space-between);
-        max-height: 6rem;
+        max-height: 4rem;
         z-index: 10;
-        animation: slide-in-top 1s ease-in-out;
+        animation: slide-in-top 400ms ease-in-out;
+        overflow: visible;
         .nav{
             display: none;
         }
         .navbar__logo{
+            width: 35px;
             margin: 0;
         }
-        .menu-icon{
-            display: inline;
-        }
         &::after{
+            transition: all 500ms ease-in-out;
             content: "";
             position: fixed;
-            top: 5.4rem;
-            bottom: 0;
+            top: 0;
             right: 0;
+            bottom: 0;
             left: 100%;
-            background-color: $accent;
+            background-color: $white;
             z-index: 10;
         }
+        .menu-hamburger{
+            transition: all 500ms ease-in-out;
+            @include flex(center, space-around);
+            flex-direction: column;
+            gap: 5px;
+        }
     } 
+
     .navbar.open{
         .nav{
             display: block;
             position: fixed;
-            left: 50%;
-            transform: translateX(-50%);
-            top: 14rem;
+            right: 50%;
+            top: 10rem;
             z-index: 11;
-            a > :first-child{
-                display: none;
+            a{
+                color: $primary;
             }
+            a:hover, a:active{
+                color: $primary;
+            }
+
             ul{
                 font-size: 1.8rem;
-                text-align: center;
+                text-align: left;
                 li{
                     opacity: 0;
-                    animation: fade-in-top 400ms ease-in-out 500ms forwards;
+                    animation: fade-in-left 400ms ease-in-out 500ms forwards;
                 }
             }
         }
-        .menu-icon{
+        .menu-hamburger{
+            position: fixed;
+            top: 2%;
+            right: 3%;
+            z-index: 12;
             span{
-                transform: translateX(40px);
-                background: transparent;
-                &::before{
-                    transform: rotate(45deg) translate(-30px, 30px);
+                background-color: $accent;
+                &:nth-child(2){
+                    transform: translateX(90px);
                 }
-                &::after{
-                    transform: rotate(-45deg) translate(-30px, -30px);
+                &:first-child{
+                    transform: rotate(45deg) translate(5px, 6px);
+                }
+                &:last-child{
+                    transform: rotate(-45deg) translate(5px, -6px);
                 }
             }
         }
         &::after{
-            animation: slideInFromRight 1s ease-in-out forwards;
-        }
-    }
-    .navbar.slideOut{
-        &::after{
-             animation: slideInFromLeft 300ms ease-in-out forwards; 
+            left: 20%;
+            box-shadow: 0 0 20px 40vw rgba(0, 0, 0, 0.5);
         }
     }
     .navbar.fixed{
         width: 100%;
-        height: 5.4rem;
-        animation: slide-in-top 500ms ease-in-out;
+        height: 4rem;
         .navbar__logo{
-            width: 45px;
+            width: 35px;
         }
     }
     .about{
@@ -596,10 +637,22 @@ footer{
     .posts .post__data{
         justify-content: center;
     }
+    .post-content{
+        left: 2%;
+        right: 2%;
+        z-index: 15;
+        .container{
+            margin-bottom: 1.5rem;
+        }
+        p{
+            font-size: 1rem;
+        }
+    }
     footer .footer-bottom{
         padding: 0 3%;
+        font-size: .7rem;
         li:first-child{
             margin-right: .4rem;
         }
-    } 
+    }
 }
