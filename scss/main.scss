@@ -62,9 +62,8 @@ header{
     @include mq-min($big){
         @include flex(center, space-between);
     }
-    background-color: $primary;
-    height: 600px;
-    background: radial-gradient(farthest-corner at 40px 300px, #000 0%, rgba(0, 0, 0, .6) 90%), url('../Images/bg-hero.jpg') no-repeat bottom center;
+    background-color: $primary;;
+    background: radial-gradient(farthest-corner at 40px 300px, #000 0%, rgba(0, 0, 0, .8) 90%), url('../Images/bg-hero.jpg') no-repeat bottom center;
     background-size: cover;
     overflow: hidden;
     transition: all 300ms linear;
@@ -76,7 +75,7 @@ header{
     @include mq-min($big){
         position: relative;
         height: 600px;
-        flex-basis: 12%;
+        flex-basis: 9%;
         align-self: flex-start;
         animation: slide-in-left 1s ease-in-out;
     }
@@ -155,13 +154,16 @@ header{
 // ===================== Hero Section ================================
 
 .hero{
-    flex-basis: 86%;
+    flex-basis: 91%;
     padding: 0 3rem;
-    align-self: flex-start;
-
+    @include mq-min($big){
+        .hero__intro{
+            padding-right: 3rem;
+        }
+    }
     p{
         text-align: center;
-        padding-bottom: 5rem;
+        padding-bottom: 3rem;
         font-size: 1.2rem;
         animation: fade-in-bottom 2s ease-out;
     }
@@ -174,6 +176,21 @@ header{
     }
     span{
         color: $accent;
+    }
+
+    .profile-pic{
+        margin: 0 auto;
+        width: 15rem;
+        height: 15rem;
+        background: linear-gradient(160deg, rgba(0, 0, 0, 0.3), 30%, $primary), url('../Images/juanito.jpg') no-repeat center;
+        background-size: cover;
+        border-radius: 50%;
+        box-shadow: -40px -40px 100px 0 rgb(0, 0, 0);
+        // border: solid 5px $accent
+        // &:hover{
+        //     width: 20rem;
+        //     height: 20rem;
+        // }
     }
     // span::before,
     // span::after{
@@ -230,28 +247,21 @@ header{
         }
         &__right{
             flex-basis: 35%;
-            position: absolute;
-            top: -50;
-            right: 0;
+            // position: absolute;
+            // top: -50;
+            // right: 0;
         }
     }
     &__right{
-        .profile-pic{
-            height: 28rem;
-            background: linear-gradient(160deg, rgba(0, 0, 0, 0.3), 30%, $primary), url('../Images/juanito.jpg') no-repeat center;
-            background-size: cover;
-            border-radius: 10px;
+        li{
+            @include flex(center, flex-start);
+            height: 5.8rem;
+            gap: 3rem;
+            margin-top: 1rem;
+            padding: 1rem 3rem;
         }
 
-        li + li{
-            @include flex(center, flex-start);
-            height: 5rem;
-            gap: 2rem;
-            margin-top: 1rem;
-            padding: 1rem 5rem;
-        }
-        li > i, 
-        li > img{
+        li > i{
             width: 1.3rem;
         }
     }
@@ -520,11 +530,6 @@ footer{
             }
         }
     }
-    .about__left{
-        p{
-            font-size: 1rem;
-        }
-    }
     .navbar {
         @include flex(center, space-between);
         max-height: 4rem;
@@ -615,12 +620,18 @@ footer{
             display: flex;
             flex-direction: column-reverse;
         }
-    }
-    .about__right{
-        li + li{
-            padding: 2rem 3rem;
+        .about__left{
+            p{
+                font-size: 1rem;
+            }
         }
+            .about__right{
+                li{
+                    padding: 2rem 3rem;
+                }
+            }
     }
+
     .project-list{
         flex-direction: column;
         gap: 2rem;

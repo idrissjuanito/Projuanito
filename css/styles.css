@@ -192,8 +192,7 @@ i span {
 
 header {
   background-color: #070707;
-  height: 600px;
-  background: radial-gradient(farthest-corner at 40px 300px, #000 0%, rgba(0, 0, 0, 0.6) 90%), url("../Images/bg-hero.jpg") no-repeat bottom center;
+  background: radial-gradient(farthest-corner at 40px 300px, #000 0%, rgba(0, 0, 0, 0.8) 90%), url("../Images/bg-hero.jpg") no-repeat bottom center;
   background-size: cover;
   overflow: hidden;
   transition: all 300ms linear;
@@ -213,7 +212,7 @@ header {
   .navbar {
     position: relative;
     height: 600px;
-    flex-basis: 12%;
+    flex-basis: 9%;
     align-self: flex-start;
     animation: slide-in-left 1s ease-in-out;
   }
@@ -292,13 +291,17 @@ header {
 }
 
 .hero {
-  flex-basis: 86%;
+  flex-basis: 91%;
   padding: 0 3rem;
-  align-self: flex-start;
+}
+@media screen and (min-width: 960px) {
+  .hero .hero__intro {
+    padding-right: 3rem;
+  }
 }
 .hero p {
   text-align: center;
-  padding-bottom: 5rem;
+  padding-bottom: 3rem;
   font-size: 1.2rem;
   animation: fade-in-bottom 2s ease-out;
 }
@@ -310,6 +313,15 @@ header {
 }
 .hero span {
   color: #e63946;
+}
+.hero .profile-pic {
+  margin: 0 auto;
+  width: 15rem;
+  height: 15rem;
+  background: linear-gradient(160deg, rgba(0, 0, 0, 0.3), 30%, #070707), url("../Images/juanito.jpg") no-repeat center;
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: -40px -40px 100px 0 black;
 }
 
 .about {
@@ -347,28 +359,18 @@ header {
   }
   .about__right {
     flex-basis: 35%;
-    position: absolute;
-    top: -50;
-    right: 0;
   }
 }
-.about__right .profile-pic {
-  height: 28rem;
-  background: linear-gradient(160deg, rgba(0, 0, 0, 0.3), 30%, #070707), url("../Images/juanito.jpg") no-repeat center;
-  background-size: cover;
-  border-radius: 10px;
-}
-.about__right li + li {
+.about__right li {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: 5rem;
-  gap: 2rem;
+  height: 5.8rem;
+  gap: 3rem;
   margin-top: 1rem;
-  padding: 1rem 5rem;
+  padding: 1rem 3rem;
 }
-.about__right li > i,
-.about__right li > img {
+.about__right li > i {
   width: 1.3rem;
 }
 
@@ -632,10 +634,6 @@ footer .footer-bottom li:first-child {
     width: 100%;
   }
 
-  .about__left p {
-    font-size: 1rem;
-  }
-
   .navbar {
     display: flex;
     align-items: center;
@@ -728,8 +726,10 @@ footer .footer-bottom li:first-child {
     display: flex;
     flex-direction: column-reverse;
   }
-
-  .about__right li + li {
+  .about .about__left p {
+    font-size: 1rem;
+  }
+  .about .about__right li {
     padding: 2rem 3rem;
   }
 
