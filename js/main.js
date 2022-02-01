@@ -1,10 +1,11 @@
 const windowHeight = document.documentElement.clientHeight;
 let docTop = document.querySelector("body");
 const about = document.querySelector('.about');
+const sections = document.querySelectorAll('section');
 const containers = document.querySelectorAll('.container');
 const menuIcon = document.querySelector('.menu-hamburger');
 const navbar = document.querySelector('.navbar');
-const projectSection = document.querySelector(".projects")
+const toolsSection = document.querySelector(".daily-tools")
 const postsSection = document.querySelector(".posts");
 const postContent = document.querySelector('.post-content');
 const goBackTop = document.querySelector(".go-back-top");
@@ -20,19 +21,17 @@ let pages = [];
 function reveal(){
     const aboutBound = about.getBoundingClientRect().top;
     
-    for(let container of containers){
-        const boundTop = container.getBoundingClientRect().top;
-        if( boundTop < windowHeight - 150){
-            const cards = container.querySelectorAll('.card');
-            for(let card of cards){
-                card.classList.add('reveal');
-            }
+    for(let section of sections){
+        const boundTop = section.getBoundingClientRect().top;
+        if( boundTop < windowHeight - 200){
+            const container = section.querySelector(".container");
+            container.classList.add('reveal');
         }
     }
 
-    const projectsTop = projectSection.getBoundingClientRect().top;
+    const toolsTop = toolsSection.getBoundingClientRect().top;
 
-    if(projectsTop <= windowHeight/2){
+    if(toolsTop <= windowHeight/2){
         goBackTop.style.bottom = "5%";
     }else{
         goBackTop.style.bottom = "-5%";
@@ -171,7 +170,7 @@ let showPosts = function(){
                     <i class="fas fa-user-circle"><span>${post.author}&emsp;|</span></i>
                 </div>
                 <div class="date">
-                    <i class="fas fa-calendar-alt"><span>${post.datePublished}&emsp;|</span></i>
+                    <i class="fas fa-calendar-alt"><span>${post.datePublished}&emsp;</span></i>
                 </div>
             </div>
         </div>`

@@ -19,15 +19,18 @@
     margin: 1rem 0;
     border-radius: 10px;
 }
-.card.reveal{
+.container.reveal{
     animation: fade-in-bottom 2s ease-in-out forwards;
 }
 .fa-file-code{
     color: #21759B;
 }
 .fa-bullhorn{
-    color: #EB5E03;
+    color: #e97121;
 }
 .person-icon{
     width: 1.3em;
+}
+.fa-pen-alt{
+    color: #1aad81; 
 }
