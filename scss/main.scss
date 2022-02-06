@@ -33,12 +33,12 @@ h1, h2, h3{
     font-weight: 200;
 }
 h2{
-    font-size: 3rem;
+    font-size: 2.5rem;
     text-align: center;
     margin-bottom: 1em;
 }
 h3{
-    font-size: 1.3em;
+    font-size: 1.2em;
 }
 li{
     list-style-type: none;
@@ -46,8 +46,8 @@ li{
 p{
     font-size: 1rem;
     font-weight: 300;
-    line-height: 1.9em;
-    padding: 1rem 0;
+    line-height: 1.6;
+    padding: .5rem 0;
 }
 
 i span{
@@ -226,7 +226,7 @@ header{
         padding-bottom: 0;
     }
     &__left{
-        flex-basis: 63%;
+        flex-basis: 68%;
         h2{
             margin-bottom: .4rem;
             @include mq-min($big){
@@ -248,16 +248,20 @@ header{
             @include flex(flex-end, space-between);
         }
         &__right{
-            flex-basis: 35%;
+            flex-basis: 30%;
         }
     }
     &__right{
         li{
             @include flex(center, flex-start);
-            height: 5.8rem;
+            height: 4.5rem;
             gap: 3rem;
             margin-top: 1rem;
-            padding: 1rem 3rem;
+            padding: 1rem;
+            padding-left: 2rem;
+            &:hover{
+                transform: translateX(5%);
+            }
         }
 
         li > i{
@@ -640,6 +644,7 @@ footer{
         }
             .about__right{
                 li{
+                    height: 6rem;
                     padding: 2rem 3rem;
                 }
             }

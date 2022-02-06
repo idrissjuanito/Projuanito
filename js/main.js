@@ -163,7 +163,7 @@ let showPosts = function(){
     for(let post of posts){
         card = `
         <div class="post card">
-            <h3 id="${post.id}"><a href="#" type="${post.type}">${post.title.slice(0, 50)}</a></h3>
+            <h3 id="${post.id}"><a href="#" type="${post.type}">${post.title.slice(0, 75)}</a></h3>
             <p>${post.body.slice(0, 120)}</p>
             <div class="post__data">
                 <div class="author">
