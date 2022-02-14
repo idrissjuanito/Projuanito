@@ -5,18 +5,19 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Pro Juanito</title>
-	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="public/css/styles.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="icon" href="Images/Icons/pj-favicon.png" type="image/png">
-	<script defer src="js/main.js"></script>
+	<link rel="icon" href="public/images/Icons/pj-favicon.png" type="image/png">
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script defer type="module" src="src/js/main.js"></script>
 </head>
 <body>
 	<header>
 		<div class="navbar">
-			<a href="/Projuanito"><img src="Images/pj-logo.png" alt="" class="navbar__logo"></a>
+			<a href="/Projuanito"><img src="public/images/pj-logo.png" alt="" class="navbar__logo"></a>
 			<div class="nav">
 				<ul>
-					<li> <a href="/Projuanito"><img src="Images/Icons/home-icon.png" alt=""><span>Home</span></a></li>
+					<li> <a href="/Projuanito"><img src="public/images/Icons/home-icon.png" alt=""><span>Home</span></a></li>
 					<li> <a href="#about"><i class="fas fa-user fa-2x"></i><span>About me</span></a></li>
 					<li> <a href="#projects"><i class="fas fa-project-diagram fa-2x"></i> <span>Projects</span></a></li>
 					<li> <a href="#blog"><i class="fas fa-blog fa-2x"></i><span>Blog</span></a></li>
@@ -74,11 +75,11 @@
 							<h3>Content Creator</h2>
 						</li>
 						<li class="card">
-							<img src="Images/Icons/man.svg" alt="" class="person-icon">
+							<img src="public/images/Icons/man.svg" alt="" class="person-icon">
 							<h3>IT Consultant</h2>
 						</li>
 						<li class="card">
-							<img src="Images/Icons/man.svg" alt="" class="person-icon">
+							<img src="public/images/Icons/man.svg" alt="" class="person-icon">
 							<h3>Freelancer</h2>
 						</li>
 					</ul>
@@ -90,27 +91,27 @@
 				<h2>My daily tools</h2>
 				<div class="tools grid">
 					<div class="card tool">
-						<img src="Images/Icons/google.png" alt="google">
+						<img src="public/images/Icons/google.png" alt="google">
 						<p>Google Search</p>
 					</div>
 					<div class="card tool">
-						<img src="Images/Icons/wordpress.png" alt="google">
+						<img src="public/images/Icons/wordpress.png" alt="WordPress">
 						<p>Wordpress</p>
 					</div>
 					<div class="card tool">
-						<img src="Images/Icons/Figma.svg" alt="google">
+						<img src="public/images/Icons/Figma.svg" alt="Figma">
 						<p>Figma</p>
 					</div>
 					<div class="card tool">
-						<img src="Images/Icons/Bitcoin.png" alt="google">
+						<img src="public/images/Icons/Bitcoin.png" alt="Bitcoin">
 						<p>Bitcoin</p>
 					</div>
 					<div class="card tool">
-						<img src="Images/Icons/vscode.png" alt="google">
+						<img src="public/images/Icons/vscode.png" alt="VS Code">
 						<p>Visual Studio Code</p>
 					</div>
 					<div class="card tool">
-						<img src="Images/Icons/trading.png" alt="google">
+						<img src="public/images/Icons/trading.png" alt="Trading View">
 						<p>Trading View</p>
 					</div>
 				</div>
@@ -121,30 +122,30 @@
 				<h2>Projects</h2>
 				<div class="project-list">
 					<div class="project-list__item">
-						<img src="Images/cmsmount.png" alt="">
+						<img src="public/images/cmsmount.png" alt="">
 						<h3>cmsmount.com</h3>
 						<small>Web Development</small>
 						<ul class="item-tools">
-							<li><img src="Images/Icons/wordpress.png" alt=""></li>
-							<li><img src="Images/Icons/ux-ui-logo.svg" alt=""></li>
+							<li><img src="public/images/Icons/wordpress.png" alt=""></li>
+							<li><img src="public/images/Icons/ux-ui-logo.svg" alt=""></li>
 						</ul>
 					</div>
 					<div class="project-list__item">
-						<img src="Images/footballsparkle.png" alt="">
+						<img src="public/images/footballsparkle.png" alt="">
 						<h3>footballsparkle.com</h3>
 						<small> blogging</small>
 						<ul class="item-tools">
-							<li><img src="Images/Icons/wordpress.png" alt=""></li>
-							<li><img src="Images/Icons/ux-ui-logo.svg" alt=""></li>
+							<li><img src="public/images/Icons/wordpress.png" alt=""></li>
+							<li><img src="public/images/Icons/ux-ui-logo.svg" alt=""></li>
 						</ul>
 					</div>
 					<div class="project-list__item">
-						<img src="Images/cmsmount.png" alt="">
+						<img src="public/images/cmsmount.png" alt="">
 						<h3>cmsmount.com</h3>
 						<small>Web Development</small>
 						<ul class="item-tools">
-							<li><img src="Images/Icons/wordpress.png" alt=""></li>
-							<li><img src="Images/Icons/ux-ui-logo.svg" alt=""></li>
+							<li><img src="public/images/Icons/wordpress.png" alt=""></li>
+							<li><img src="public/images/Icons/ux-ui-logo.svg" alt=""></li>
 						</ul>
 					</div>
 				</div>
@@ -180,5 +181,7 @@
 	<div class="go-back-top">
 		<span></span><span></span>
 	</div>
+	<post-card name="Pro Juanito"></post-card>
+	<post-card name="Pro Rissa"></post-card>
 </body>
 </html>

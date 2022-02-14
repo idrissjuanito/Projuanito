@@ -185,10 +185,12 @@ header{
         margin: 0 auto;
         width: 15rem;
         height: 15rem;
-        background: linear-gradient(160deg, rgba(0, 0, 0, 0.3), 30%, $primary), url('../Images/juanito.jpg') no-repeat center;
+        // background: linear-gradient(160deg, rgba(0, 0, 0, 0.3), 30%, $primary), url('../Images/juanito.jpg') no-repeat center;
+        background: url('../Images/juanito.jpg') no-repeat center;
         background-size: cover;
         border-radius: 50%;
         box-shadow: -40px -40px 100px 0 rgb(0, 0, 0);
+        border: 10px solid rgba($color: $white, $alpha: 0.8);
         // border: solid 5px $accent
         // &:hover{
         //     width: 20rem;
