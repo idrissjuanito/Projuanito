@@ -704,7 +704,7 @@ footer .footer-bottom li:first-child {
     color: #000000;
   }
   .navbar.open .nav a:hover, .navbar.open .nav a:active {
-    color: #000000;
+    color: #e63946;
   }
   .navbar.open .nav ul {
     font-size: 1.8rem;
