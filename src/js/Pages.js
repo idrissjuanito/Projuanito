@@ -1,7 +1,7 @@
-import {data} from "./functions/fetchData.js"
+import { data } from "./functions/fetchData.js"
 
 const footerPages = document.querySelector(".footer-bottom ul");
-const {pages} = data;
+const { pages } = data;
 
 class Pages{
 
@@ -9,25 +9,31 @@ class Pages{
         this.pages = pageList;
     }
 
-    getPages(id){
-        let founds = [];
-        id.forEach( (index) => {
-            founds = founds.concat(this.pages.filter((page) => page._id === index));
-        });
-        return founds;
+    find(id){
+        let findings;
+        
+        if(!Array.isArray(id)){
+            findings = this.pages.filter((page) => page._id === id);
+        }else{
+            findings = [];
+            id.forEach( (index) => {
+                findings = findings.concat(this.pages.filter((page) => page._id === index));
+            });
+        }
+        return findings;
     }
     
     footerPageList(){
-        const pageList = this.getPages(["428a1388-3adc-43f5-b305-70afe4e7f7fd", "c3cb3418-1689-4353-8544-0a37cb737f95"]);
+        const pageList = this.find(["c544950c-747e-4dd9-b83b-9249b686484f", "cf0d0b78-f665-4880-9156-824ee9741ac3"]);
     
         pageList.forEach( (page) => {
             footerPages.innerHTML +=
-                `<li id="${page._id}"><a href="#" type="page">${page.title}</a></li>`; 
+                `<li><a href="#${page.slug.current}">${page.title}</a></li>`; 
             });
     }
 
 }
 
-const pag = new Pages(pages);
+const pager = new Pages(pages);
 
-export default pag;
+export default pager;

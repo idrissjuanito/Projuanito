@@ -1,7 +1,7 @@
 import { data } from "./functions/fetchData.js"
 
 const postsSection = document.querySelector(".posts");
-const { blogPosts, postAuthors } = data;
+const { posts, authors } = data;
 
 class Posts{
     constructor (posts, authors){
@@ -9,27 +9,40 @@ class Posts{
         this.authors = authors;
     }
 
-    getPostAuthor(post){
-        const authorRef = post.author._ref;
+    getPostAuthor(authorID){
         let authorName;
     
         for(let author of this.authors){
-            if(author._id === authorRef){
+            if(author._id === authorID){
                 authorName = author.name;
             }
         }
         return authorName;
     }
     
+    find(id){
+        let findings;
+        
+        if(!Array.isArray(id)){
+            findings = this.posts.filter((page) => page._id === id);
+        }else{
+            findings = [];
+            id.forEach( (index) => {
+                findings = findings.concat(this.posts.filter((page) => page._id === index));
+            });
+        }
+        return findings;
+    }
+
     showPosts(){
         let card;        
 
         for(let post of this.posts){
             let body = post.body[0].children[0].text; 
-            const author = this.getPostAuthor(post);
+            const author = this.getPostAuthor(post.author._ref);
             card = `
             <div class="post card">
-                <h3 id="${post._id}"><a href="#" type="${post.Postype}">${post.title.slice(0, 80)}</a></h3>
+                <h3><a href="#${post.slug.current}">${post.title.slice(0, 80)}</a></h3>
                 <p>${body.slice(0, 115)}</p>
                 <div class="post__data">
                     <div class="author">
@@ -45,6 +58,6 @@ class Posts{
     }
 }
 
-const blogp = new Posts(blogPosts, postAuthors);
+const blogp = new Posts(posts, authors);
 
 export default blogp;

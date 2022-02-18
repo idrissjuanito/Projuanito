@@ -1,6 +1,7 @@
 import Posts from "./Posts.js";
 import Pages from "./Pages.js";
-import getPostContent from "./singlePostContent.js";
+import {preventDef} from "./singlePostContent.js";
+import router from "./Router/Router.js";
 import {windowHeight, menuHamburger, fixedNav, scrollBackTop} from "./navigations.js";
 
 const sections = document.querySelectorAll('section');
@@ -24,5 +25,5 @@ export default () => {
     Pages.footerPageList();
     menuHamburger;
     const postLink = document.querySelectorAll("a");
-    postLink.forEach( link => link.addEventListener("click", getPostContent));
+    postLink.forEach( link => link.addEventListener("click", preventDef));
 }

@@ -4,7 +4,6 @@ const toolsSection = document.querySelector(".daily-tools");
 const about = document.querySelector('.about');
 const menuIcon = document.querySelector('.menu-hamburger');
 export const windowHeight = document.documentElement.clientHeight;
-
 export const menuHamburger = menuIcon.addEventListener('click', closeMobileNav);
 
 function closeMobileNav(){
