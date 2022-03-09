@@ -123,7 +123,7 @@ layout: base.njk
                     <i class="fas fa-calendar-alt"><span> {{article.publishedAt}}&emsp;</span></i>
                 </div>
             </div>
-            <h3><a href="{{'/posts/{{article.title' | slug }}/ | url }}">{{article.title}}</a></h3>
+            <h3><a href="/posts/{{article.title | slug }}/">{{article.title}}</a></h3>
         </div>
     </div>
 {% endfor %}

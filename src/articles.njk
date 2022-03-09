@@ -4,7 +4,7 @@ pagination:
     data: fetchdata.posts
     size: 1
     alias: singlearticle
-permalink: "{{'/posts/{{ singlearticle.slug.current|slug }}/' | url}}"
+permalink: "/posts/{{ singlearticle.slug.current|slug }}/"
 ---
 
 {% set articles = fetchdata.posts %}
@@ -59,7 +59,7 @@ permalink: "{{'/posts/{{ singlearticle.slug.current|slug }}/' | url}}"
                             </div>
                         </div>
 
-                         <h3><a href="{{'/posts/{{article.slug.current' | slug}}/ | url}}">{{article.title}}</a></h3>
+                         <h3><a href="/posts/{{article.slug.current | slug}}/">{{article.title}}</a></h3>
 
                     </div>
                 </div>
