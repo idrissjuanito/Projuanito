@@ -4,13 +4,17 @@
   "description": "This the first version i built for the site. Did not use any dependencies or any know worklow technique. just went a head did everything from scratch with beginner knowledge of JS.",
   "source": "index.html",
   "scripts": {
-    "dev": "parcel serve -p 8081",
-    "build": "rm -rf dist && parcel build"
+    "start": "eleventy --serve --port 8081 --formats=md,jpg,svg,png,njk,jpeg",
+    "build": "eleventy"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.2.1"
+    "@11ty/eleventy": "^1.0.0",
+    "dotenv": "^16.0.0"
+  },
+  "dependencies": {
+    "axios": "^0.26.0"
   }
 }

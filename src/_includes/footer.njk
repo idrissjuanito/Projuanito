@@ -13,7 +13,12 @@
 			</div>
 		</div>
 		<div class="footer-bottom" id="contacts">
-			<span>Copyright &copy; 2015-2021 Afrosilicon</span>
-			<ul class="links"></ul>
+			<span>Copyright &copy; 2015-2022 Afrosilicon</span>
+			<ul class="links">
+				{% set pages = fetchdata.pages %}
+				{% for page in pages %}
+					<li><a href="/page/{{page.title | slug}}/">{{page.title}}</a></li>
+				{% endfor %}
+			</ul>
 		</div>
 	</footer>

@@ -3,7 +3,7 @@
 
 const postContent = document.querySelector('.post-content');
 
-export function preventDef(e){
+export default function preventDef(e){
     // let type = e.target.getAttribute("type");
     // let content;
     // let id = e.target.parentElement.id;
@@ -23,7 +23,7 @@ export function preventDef(e){
     // render(content, id);
 }
 
-export function render(content, author){
+function render(content, author){
     content = content[0];
     let body = content.body[0].children[0].text;
 

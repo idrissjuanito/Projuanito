@@ -1,7 +1,7 @@
-import Posts from "./Posts.js";
-import Pages from "./Pages.js";
-import {preventDef} from "./singlePostContent.js";
-import router from "./Router/Router.js";
+// const Posts = require("./../_data/Posts.js");
+// const Pages = require("./../_data/Pages.js");
+import preventDef from "./singlePostContent.js";
+// const router = require("./Router/Router.js");
 import {windowHeight, menuHamburger, fixedNav, scrollBackTop} from "./navigations.js";
 
 const sections = document.querySelectorAll('section');
@@ -21,8 +21,8 @@ function scrollReveal(){
 
 export default () => {
     document.addEventListener('scroll', scrollReveal);
-    Posts.showPosts();
-    Pages.footerPageList();
+    // posts.showPosts();
+    // Pages.footerPageList();
     menuHamburger;
     const postLink = document.querySelectorAll("a");
     postLink.forEach( link => link.addEventListener("click", preventDef));

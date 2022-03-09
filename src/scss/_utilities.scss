@@ -15,22 +15,29 @@
 }
 .card{
     width: 100%;
-    background-color: $secondary;
+    // background-color: $secondary;
     margin: 1rem 0;
     border-radius: 10px;
+    border: 1px solid #333;
 }
 .container.reveal{
     animation: fade-in-bottom 2s ease-in-out forwards;
 }
 .fa-file-code{
-    color: #21759B;
+    color: #ff5f5f;
 }
 .fa-bullhorn{
-    color: #e97121;
+    color: #ff9148;
 }
 .person-icon{
     width: 1.3em;
 }
 .fa-pen-alt{
-    color: #1aad81; 
+    color: #48ffc8; 
+}
+.fa-lightbulb{
+    color: #ffcf4a;
+}
+.fa-laptop-code{
+    color: #5decff; 
 }
