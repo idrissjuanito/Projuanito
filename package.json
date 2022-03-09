@@ -2,19 +2,20 @@
   "name": "projuanito.com",
   "version": "1.0.0",
   "description": "This the first version i built for the site. Did not use any dependencies or any know worklow technique. just went a head did everything from scratch with beginner knowledge of JS.",
-  "source": "index.html",
+  "source": "./src/index.html",
   "scripts": {
     "start": "eleventy --serve --port 8081 --formats=md,jpg,svg,png,njk,jpeg",
-    "build": "eleventy"
+    "build": "env NODE_ENV=production npx eleventy --pathprefix 'Projuanito",
+    "debug": "DEBUG=* npx eleventy"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
     "dotenv": "^16.0.0"
   },
   "dependencies": {
-    "@11ty/eleventy": "^1.0.0",
     "axios": "^0.26.0"
   }
 }
