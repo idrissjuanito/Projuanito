@@ -5,7 +5,7 @@
   "source": "./src/index.html",
   "scripts": {
     "start": "eleventy --serve --port 8081 --formats=md,jpg,svg,png,njk,jpeg",
-    "build": "env NODE_ENV=production npx eleventy --pathprefix 'Projuanito",
+    "build": "env NODE_ENV=production npx eleventy --pathprefix 'Projuanito'",
     "debug": "DEBUG=* npx eleventy"
   },
   "keywords": [],

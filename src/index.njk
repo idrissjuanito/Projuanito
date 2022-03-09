@@ -45,27 +45,27 @@ layout: base.njk
         <h2>Top Skills</h2>
         <div class="tools grid">
             <div class="card tool">
-                <img src="./images/icons/google.png" alt="google">
+                <img src="{{'/images/icons/google.png' | url}}" alt="google">
                 <p>Google Search</p>
             </div>
             <div class="card tool">
-                <img src="./images/icons/wordpress.png" alt="WordPress">
+                <img src="{{'/images/icons/wordpress.png' | url}}" alt="WordPress">
                 <p>Wordpress</p>
             </div>
             <div class="card tool">
-                <img src="./images/icons/Figma.svg" alt="Figma">
+                <img src="{{'/images/icons/Figma.svg' | url}}" alt="Figma">
                 <p>Figma - UI/UX</p>
             </div>
             <div class="card tool">
-                <img src="./images/icons/js-square.svg" alt="Bitcoin">
+                <img src="{{'/images/icons/js-square.svg' | url}}" alt="Bitcoin">
                 <p>HTML | CSS | JS</p>
             </div>
             <div class="card tool">
-                <img src="./images/icons/vscode.png" alt="VS Code">
+                <img src="{{'/images/icons/vscode.png' | url}}" alt="VS Code">
                 <p>VS Code</p>
             </div>
             <div class="card tool">
-                <img src="./images/icons/git-logo.svg" alt="Git Version Control">
+                <img src="{{'/images/icons/git-logo.svg' | url}}" alt="Git Version Control">
                 <p>Git</p>
             </div>
         </div>
@@ -76,21 +76,21 @@ layout: base.njk
         <h2>Projects</h2>
         <div class="project-list">
             <div class="project-list__item">
-                <img src="./images/cmsmount.png" alt="">
+                <img src="{{'/images/cmsmount.png' | url }}" alt="">
                 <h3>cmsmount.com</h3>
                 <small>Digital Marketing Agency</small>
                 <ul class="item-tools">
-                <li><img src="./images/icons/wordpress.png" alt=""></li>
-                <li><img src="./images/icons/ux-ui-logo.svg" alt=""></li>
+                <li><img src="{{'/images/icons/wordpress.png' | url }}" alt=""></li>
+                <li><img src="{{'/images/icons/ux-ui-logo.svg' | url }}" alt=""></li>
                 </ul>
             </div>
             <div class="project-list__item">
-                <img src="./images/footballsparkle.png" alt="">
+                <img src="{{'/images/footballsparkle.png' | url }}" alt="">
                 <h3>footballsparkle.com</h3>
                 <small> Soccer Blog</small>
                 <ul class="item-tools">
-                <li><img src="./images/icons/wordpress.png" alt=""></li>
-                <li><img src="./images/icons/ux-ui-logo.svg" alt=""></li>
+                <li><img src="{{'/images/icons/wordpress.png' | url }}" alt=""></li>
+                <li><img src="{{'/images/icons/ux-ui-logo.svg' | url }}" alt=""></li>
                 </ul>
             </div>
             {# <div class="project-list__item">
@@ -123,7 +123,7 @@ layout: base.njk
                     <i class="fas fa-calendar-alt"><span> {{article.publishedAt}}&emsp;</span></i>
                 </div>
             </div>
-            <h3><a href="/posts/{{article.title | slug }}/">{{article.title}}</a></h3>
+            <h3><a href="{{'/posts/{{article.title' | slug }}/ | url }}">{{article.title}}</a></h3>
         </div>
     </div>
 {% endfor %}
