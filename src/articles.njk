@@ -7,7 +7,7 @@ pagination:
 permalink: "/posts/{{ singlearticle.slug.current|slug }}/"
 ---
 
-{%- assign articles = fetchdata.posts -%}
+{%- set articles = fetchdata.posts -%}
 
 <article>
 
@@ -29,7 +29,7 @@ permalink: "/posts/{{ singlearticle.slug.current|slug }}/"
     {% for blok_text in blok.children %}
         {% if blok.style == "normal" and blok_text.text !== "" %}
             <p>{{blok_text.text | safe}}
-        {% elsif blok.style !== "normal" %}
+        {% elif blok.style !== "normal" %}
             <h2>{{blok_text.text}}</h2>
         {% endif%}
     {% endfor%}
