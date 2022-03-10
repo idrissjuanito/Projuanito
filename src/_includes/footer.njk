@@ -17,7 +17,7 @@
 			<ul class="links">
 				{% set pages = fetchdata.pages %}
 				{% for page in pages %}
-					<li><a href="/page/{{page.title | slug}}/">{{page.title}}</a></li>
+					<li><a href="/page/{{page.slug.current | slug}}/">{{page.title}}</a></li>
 				{% endfor %}
 			</ul>
 		</div>

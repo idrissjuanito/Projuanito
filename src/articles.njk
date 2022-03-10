@@ -59,7 +59,7 @@ permalink: "/posts/{{ singlearticle.slug.current|slug }}/"
                             </div>
                         </div>
 
-                         <h3><a href="/posts/{{article.slug.current | slug}}/">{{article.title}}</a></h3>
+                         <h3><a href="{{'/posts/({{article.slug.current | slug}})/' | url}}">{{article.title}}</a></h3>
 
                     </div>
                 </div>
