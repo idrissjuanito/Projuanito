@@ -14,3 +14,7 @@ jobs:
           node-version: '12.x'
       - run: npm install
       - run: npm run build
+      - uses: peaceiris/actions-gh-pages@v1.1.0
+        env:
+          PUBLISH_DIR: dist 
+          PUBLISH_BRANCH: live-built
