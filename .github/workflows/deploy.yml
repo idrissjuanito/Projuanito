@@ -16,6 +16,6 @@ jobs:
       - run: npm run build
       - uses: peaceiris/actions-gh-pages@v3
         env:
-          PUBLISH_DIR: ./dist
+          PUBLISH_DIR: dist
           PUBLISH_BRANCH: live-built
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
