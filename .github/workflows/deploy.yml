@@ -18,3 +18,4 @@ jobs:
         env:
           PUBLISH_DIR: dist 
           PUBLISH_BRANCH: live-built
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
