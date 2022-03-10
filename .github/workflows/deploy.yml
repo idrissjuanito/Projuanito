@@ -4,13 +4,13 @@ on:
   push:
     branches: [live]
   
-  jobs:
-    deploy:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@live
-          uses: actions/setup-node@live
-          with:
-            node-version: '12.x'
-        - run: npm install
-        - run: npm run build
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@live
+        uses: actions/setup-node@live
+        with:
+          node-version: '12.x'
+      - run: npm install
+      - run: npm run build
