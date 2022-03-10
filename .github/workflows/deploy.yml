@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@live
-        uses: actions/setup-node@live
+      - uses: actions/setup-node@live
         with:
           node-version: '12.x'
       - run: npm install
