@@ -19,3 +19,4 @@ jobs:
           publish_dir: ./dist
           publish_branch: live-built
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
