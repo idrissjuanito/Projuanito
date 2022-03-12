@@ -147,7 +147,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  transition: all 300ms ease-out;
+  transition: all 500ms ease-out;
 }
 
 body {
@@ -312,7 +312,8 @@ header {
 @media screen and (min-width: 960px) {
   .navbar.fixed {
     height: 90vh;
-    top: 5%;
+    top: 50%;
+    transform: translateY(-50%);
     max-width: 4%;
     border-radius: 5px;
     padding: 0.5rem;
@@ -336,12 +337,18 @@ header {
 }
 
 .hero {
-  flex-basis: 91%;
+  flex-basis: 90%;
   padding: 0 3rem;
+}
+.hero .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media screen and (min-width: 960px) {
   .hero .hero__intro {
     padding-right: 3rem;
+    max-width: 56rem;
   }
 }
 .hero p {
@@ -361,7 +368,9 @@ header {
 }
 .hero .profile-pic {
   margin: 0 auto;
-  max-width: 15rem;
+  width: 16rem;
+  max-width: 20rem;
+  min-height: 16rem;
   aspect-ratio: 1/1;
   background: url("../images/juanito.jpg") no-repeat center;
   background-size: cover;
