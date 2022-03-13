@@ -1,7 +1,7 @@
 require('dotenv').config()
 
 const url = "https://53zt2ahq.api.sanity.io/v1/data/query/production?query=*%5B_type%20in%20%5B%22post%22%2C%20%22author%22%2C%20%22page%22%5D%5D";
-const token = process.env.AUTH_TOKEN;
+const auth_token = process.env.AUTH_TOKEN;
 // const token = "sk2E2Lz375IItZ0niOdoslpeqV2YTKzW3nqn6qnQSlDjjaLXIv6jea8DVHZwvilxDHbKLplVeZOuduHQod5nWq7rtAVn4eazKwcJW9kouJMOxMkVYWDKoOfTZDnyXfvKdhXgQT0ve16o9L4GLWsGWLKRt9fRKVFmz66Zjp0lQKuM5CVEkjGE";
 const axios = require("axios");
 //  const routes = require("../Router/Routes.js");
@@ -25,7 +25,7 @@ async function fetchData(url, token){
 
 module.exports = async function processData(){
     try {
-        const data = await fetchData(url, token);
+        const data = await fetchData(url, auth_token);
     
         let posts = [];
         let authors = [];
