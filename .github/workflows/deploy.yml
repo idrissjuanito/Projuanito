@@ -19,7 +19,6 @@ jobs:
       - uses: peaceiris/actions-gh-pages@v3
         with:
           publish_dir: ./dist
-          publish_branch: live-built
+          # publish_branch: live-built
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          auth_token: ${{ secrets.AUTH_TOKEN }}
-
+          destination_dir: dir
