@@ -67,7 +67,7 @@ section .container{
 // ===================== Header Section ================================
 
 header{
-    @include mq-min($big){
+    @include mq-min($medium){
         @include flex(center, space-between);
     }
     background-color: $primary;;
@@ -79,12 +79,14 @@ header{
 
 .navbar{
     padding: .5rem 1.2rem;
-    @include mq-min($big){
-        position: relative;
-        height: 600px;
-        max-height: 600px;
-        flex-basis: 9%;
+
+    @include mq-min($medium){
+        padding-right: 0;
+        flex-basis: 12%;
         align-self: flex-start;
+        position: relative;
+        height: 95vh;
+        max-height: 600px;
         animation: slide-in-left 1s ease-in-out;
     }
     &__logo{
@@ -116,7 +118,7 @@ header{
             transition: all 300ms ease-in-out;
             opacity: .1;
         }
-
+        
         span:hover::after,
         span:active::after{
             top: 110%;
@@ -131,12 +133,13 @@ header{
     .social-icons{
         display: flex;
         place-content: center;
+        -webkit-gap: 1.5rem;
         gap: 1.5rem;
         a{
             padding: 0;
         }
 
-        @include mq-min($big){
+        @include mq-min($medium){
             flex-direction: column;
             position: absolute;
             bottom: 20px;
@@ -151,7 +154,7 @@ header{
     span{
         height: 3px;
         width: 100%;
-        border-radius: 1px;
+        border-radius: 3px;
         background-color: $white;
         // margin: 5px;
     }
@@ -162,11 +165,11 @@ header{
     background-color: $primary;
     z-index: 10;
     overflow: hidden;
-    @include mq-min($big){
+    @include mq-min($medium){
         height: 90vh;
         top: 50%;
         transform: translateY(-50%);
-        max-width: 4%;
+        min-width: 4%;
         border-radius: 5px;
         padding: .5rem;
         .fa-2x{
@@ -191,14 +194,12 @@ header{
 // ===================== Hero Section ================================
 
 .hero{
-    flex-basis: 90%;
-    padding: 0 3rem;
+    flex-basis: 86%;
     .container{
         @include flex(center, center);
     }
     @include mq-min($big){
         .hero__intro{
-            padding-right: 3rem;
             max-width: 56rem;
         }
     }
@@ -211,7 +212,8 @@ header{
 
     h1{
         text-align: center;
-        font-size: clamp(3rem, 8vw, 4rem);
+        font-size: clamp(3rem, 6.5vw, 4rem);
+        -webkit-font-size: clamp(3rem, 6.5vw, 4rem);
         font-weight: 400;
         animation: fade-in 2s ease-in-out;
     }
@@ -227,10 +229,11 @@ header{
         aspect-ratio: 1/1;
         // background: linear-gradient(160deg, rgba(0, 0, 0, 0.3), 30%, $primary), url('../Images/juanito.jpg') no-repeat center;
         background: url('../images/juanito.jpg') no-repeat center;
+        mix-blend-mode: hard-light;
         background-size: cover;
         border-radius: 50%;
         box-shadow: -40px -40px 100px 0 rgb(0, 0, 0);
-        border: 5px solid rgba($color: $white, $alpha: 0.8);
+        border: 2px solid $white;
     }
 }
 
@@ -274,6 +277,7 @@ header{
         li{
             @include flex(center, flex-start);
             height: 4.6rem;
+            -webkit-gap: 3rem;
             gap: 3rem;
             margin-top: 1rem;
             padding: 1rem;
@@ -300,7 +304,6 @@ header{
         padding-block: 2rem;
         &:hover{
             transform: translateY(-5%);
-        // box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.2);
         }
         p{
             font-weight: 400;
@@ -322,11 +325,14 @@ header{
     position: relative;
     .project-list{
         @include flex(center, space-between);
+        flex: 1 1;
         color: $secondary;
         padding-block: 3rem;
+        -webkit-padding-block: 3rem;
+        -webkit-gap: 3rem;
         gap: 3rem;
         &__item{
-            height: auto;
+            flex: 1 1 50%;
             background-color: white;
             box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
             border-radius: 10px;
@@ -354,6 +360,7 @@ header{
         ul{
             padding-top: 1.5rem;
             @include flex(center, center);
+            -webkit-gap: 1rem;
             gap: 1rem;
             img{
                 width: 60px;
@@ -436,6 +443,7 @@ article{
 .post__data{
     @include flex(center, flex-start);
     margin-bottom: 1.4rem;
+    -webkit-gap: .5rem;
     gap: .5rem;
     color: rgb(236, 131, 131);
     opacity: .4;
@@ -548,7 +556,7 @@ footer{
         text-align: center;
     }
     .container{
-        padding: 4rem 0;
+        padding: 3rem 0;
     }
     header {
         transition: all 1s ease-in-out;
@@ -559,6 +567,8 @@ footer{
             padding: 0;
             .container{
                 flex-direction: column;
+                padding-block: 1rem;
+                -webkit-padding-block: 1rem;
             }
             p{
                 width: 100%;
@@ -594,6 +604,7 @@ footer{
             transition: all 500ms ease-in-out;
             @include flex(center, space-around);
             flex-direction: column;
+            -webkit-gap: 5px;
             gap: 5px;
         }
     } 
@@ -672,6 +683,7 @@ footer{
 
     .project-list{
         flex-direction: column;
+        -webkit-gap: 2rem;
         gap: 2rem;
     }
     .posts .post{
