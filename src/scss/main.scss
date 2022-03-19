@@ -466,11 +466,14 @@ footer{
         max-width: 350px;
         text-align: center;
         @include font('Nova Square');
+        .mc-field-group{
+            @include flex(center, center);
+        }
         p{
             line-height: 1.2em;
             color: $white;
         }
-        input[type='text']{
+        input[type='email']{
             width: 70%;
             font-size: 1rem;
             padding: 1rem;
@@ -478,7 +481,7 @@ footer{
                 outline: none;
             }
         }
-        input[type='button']{
+        input[type='submit']{
             color: $white;
             @include font('Nova Square');
             border: none;

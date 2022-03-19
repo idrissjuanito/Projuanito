@@ -609,19 +609,24 @@ footer .subscribe {
   text-align: center;
   font-family: "Nova Square", sans-serif;
 }
+footer .subscribe .mc-field-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 footer .subscribe p {
   line-height: 1.2em;
   color: #ededed;
 }
-footer .subscribe input[type=text] {
+footer .subscribe input[type=email] {
   width: 70%;
   font-size: 1rem;
   padding: 1rem;
 }
-footer .subscribe input[type=text]:focus {
+footer .subscribe input[type=email]:focus {
   outline: none;
 }
-footer .subscribe input[type=button] {
+footer .subscribe input[type=submit] {
   color: #ededed;
   font-family: "Nova Square", sans-serif;
   border: none;
@@ -630,7 +635,7 @@ footer .subscribe input[type=button] {
   background-color: #e62d2d;
   cursor: pointer;
 }
-footer .subscribe input[type=button]:hover {
+footer .subscribe input[type=submit]:hover {
   transform: scale(0.96);
 }
 footer .footer-bottom {
