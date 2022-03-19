@@ -359,7 +359,7 @@ header {
 }
 .hero h1 {
   text-align: center;
-  font-size: 4.2rem;
+  font-size: clamp(3rem, 8vw, 4rem);
   font-weight: 400;
   animation: fade-in 2s ease-in-out;
 }
@@ -615,6 +615,8 @@ footer .subscribe .mc-field-group {
   justify-content: center;
 }
 footer .subscribe p {
+  margin-top: 1.4rem;
+  font-size: 1.3rem;
   line-height: 1.2em;
   color: #ededed;
 }
