@@ -171,7 +171,9 @@ a {
   cursor: pointer;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: "nova square", sans-serif;
   font-weight: 200;
   margin-bottom: 0.6em;
@@ -274,14 +276,15 @@ header {
   right: 0;
   opacity: 0.7;
 }
-.navbar a:hover, .navbar a:active {
+.navbar a:hover,
+.navbar a:active {
   opacity: 1;
 }
 .navbar .social-icons {
   display: flex;
   place-content: center;
-  -webkit-gap: 1.5rem;
   gap: 1.5rem;
+  -webkit-gap: 1.5rem;
 }
 .navbar .social-icons a {
   padding: 0;
@@ -348,7 +351,7 @@ header {
 }
 @media screen and (min-width: 960px) {
   .hero .hero__intro {
-    max-width: 56rem;
+    max-width: 50rem;
   }
 }
 .hero p {
@@ -359,8 +362,8 @@ header {
 }
 .hero h1 {
   text-align: center;
+  -webkit-font-size: clamp(4rem, 6.5vw, 4rem);
   font-size: clamp(3rem, 6.5vw, 4rem);
-  -webkit-font-size: clamp(3rem, 6.5vw, 4rem);
   font-weight: 400;
   animation: fade-in 2s ease-in-out;
 }
@@ -468,8 +471,8 @@ header {
   justify-content: space-between;
   flex: 1 1;
   color: #191919;
-  padding-block: 3rem;
   -webkit-padding-block: 3rem;
+  padding-block: 3rem;
   -webkit-gap: 3rem;
   gap: 3rem;
 }
@@ -642,10 +645,11 @@ footer .subscribe input[type=submit] {
   border: none;
   padding: 1.6rem;
   margin-left: -2rem;
-  background-color: #e62d2d;
+  background: #e62d2d;
   cursor: pointer;
 }
 footer .subscribe input[type=submit]:hover {
+  -webkit-transform: scale(0.96);
   transform: scale(0.96);
 }
 footer .footer-bottom {
@@ -772,7 +776,8 @@ footer .footer-bottom li:first-child {
   .navbar.open .nav a {
     color: #080808;
   }
-  .navbar.open .nav a:hover, .navbar.open .nav a:active {
+  .navbar.open .nav a:hover,
+.navbar.open .nav a:active {
     color: #e62d2d;
   }
   .navbar.open .nav ul {
@@ -793,12 +798,15 @@ footer .footer-bottom li:first-child {
     background-color: #e62d2d;
   }
   .navbar.open .menu-hamburger span:nth-child(2) {
+    -webkit-transform: translateX(90px);
     transform: translateX(90px);
   }
   .navbar.open .menu-hamburger span:first-child {
+    -webkit-transform: rotate(45deg) translate(5px, 6px);
     transform: rotate(45deg) translate(5px, 6px);
   }
   .navbar.open .menu-hamburger span:last-child {
+    -webkit-transform: rotate(-45deg) translate(5px, -6px);
     transform: rotate(-45deg) translate(5px, -6px);
   }
   .navbar.open::after {
@@ -864,6 +872,7 @@ footer .footer-bottom li:first-child {
   }
 
   .projects::after {
+    -webkit-inset: 80% 0 0 0;
     inset: 80% 0 0 0;
   }
 
