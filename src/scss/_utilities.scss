@@ -1,43 +1,43 @@
-@import 'variables';
+@import "variables";
 
-.container{
-    width: 90%;
-    max-width: 1460px;
-    margin: 0 auto;
-    padding: 5rem 3rem;
-    overflow: hidden;
+.container {
+  width: 95%;
+  max-width: 1326px;
+  margin: 0 auto;
+  padding: 5rem 3rem;
+  overflow: hidden;
 }
-.grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-    align-items: center;
-    gap: 1rem;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  align-items: center;
+  gap: 1rem;
 }
-.card{
-    width: 100%;
-    // background-color: $secondary;
-    margin: 1rem 0;
-    border-radius: 10px;
-    border: 1px solid #333;
+.card {
+  width: 100%;
+  // background-color: $secondary;
+  margin: 1rem 0;
+  border-radius: 10px;
+  border: 1px solid #333;
 }
-.container.reveal{
-    animation: fade-in-bottom 2s ease-in-out forwards;
+.container.reveal {
+  animation: fade-in-bottom 2s ease-in-out forwards;
 }
-.fa-file-code{
-    color: #ff5f5f;
+.fa-file-code {
+  color: #ff5f5f;
 }
-.fa-bullhorn{
-    color: #ff9148;
+.fa-bullhorn {
+  color: #ff9148;
 }
-.person-icon{
-    width: 1.3em;
+.person-icon {
+  width: 1.3em;
 }
-.fa-pen-alt{
-    color: #48ffc8; 
+.fa-pen-alt {
+  color: #48ffc8;
 }
-.fa-lightbulb{
-    color: #ffcf4a;
+.fa-lightbulb {
+  color: #ffcf4a;
 }
-.fa-laptop-code{
-    color: #5decff; 
+.fa-laptop-code {
+  color: #5decff;
 }
