@@ -1,31 +1,33 @@
-// const navbar = document.querySelector('.navbar');
+const navbar = document.querySelector(".navbar")
+const navigation = document.querySelector(".nav")
 const goBackTop = document.querySelector(".go-back-top");
 const toolsSection = document.querySelector(".daily-tools");
 const body = document.querySelector("body");
-// const menuIcon = document.querySelector('.menu-hamburger');
+const menuIcon = document.querySelector('.menu-hamburger');
 export const windowHeight = document.documentElement.clientHeight;
-// export const menuHamburger = menuIcon.addEventListener("click", closeMobileNav);
+export const menuHamburger = menuIcon.addEventListener("click", closeMobileNav);
 
-// function closeMobileNav(){
+function closeMobileNav(){
+
+    menuIcon.classList.toggle("is_active");
+    navigation.classList.toggle("open")
+
+    const navLinks = document.querySelectorAll('.nav a');
+    navLinks.forEach((link) => link.removeEventListener('click', closeMobileNav));
+    if(navigation.classList.contains("open")){
+        navLinks.forEach((link) => link.addEventListener('click', closeMobileNav));
+    }
+}
 //
-//     navbar.classList.toggle('open');
-//
-//     const navLinks = document.querySelectorAll('.nav a');
-//     navLinks.forEach((link) => link.removeEventListener('click', closeMobileNav));
-//     if(navbar.classList.contains("open")){
-//         navLinks.forEach((link) => link.addEventListener('click', closeMobileNav));
-//     }
-// }
-//
-// export function fixedNav(){
-//     const bodyTop = body.getBoundingClientRect().top;
-//
-//     if (bodyTop < -630){
-//         navbar.classList.add('fixed');
-//     }else{
-//         navbar.classList.remove('fixed');
-//     }
-// }
+export function fixedNav(){
+    const bodyTop = body.getBoundingClientRect().top;
+
+    if (bodyTop < -630){
+        navbar.classList.add('fixed');
+    }else{
+        navbar.classList.remove('fixed');
+    }
+}
 
 export function scrollBackTop() {
   const bodyTop = body.getBoundingClientRect().top;

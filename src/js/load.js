@@ -1,4 +1,4 @@
-import { windowHeight, scrollBackTop } from "./navigations.js";
+import { windowHeight, scrollBackTop, fixedNav } from "./navigations.js";
 
 const sections = document.querySelectorAll("section");
 
@@ -10,7 +10,7 @@ function scrollReveal() {
       container.classList.add("reveal");
     }
   }
-  // fixedNav();
+  fixedNav();
   scrollBackTop();
 }
 
