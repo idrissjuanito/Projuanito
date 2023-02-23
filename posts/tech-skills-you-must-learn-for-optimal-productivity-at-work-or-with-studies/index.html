@@ -7,70 +7,20 @@
 	<title></title>
 	<link rel="stylesheet" href="../../css/styles.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="icon" href="../../images/icons/pj-favicon.png" type="image/png">
+	<link rel="icon" href="/images/icons/projuanito_wh_bg.png" type="image/png">
 	<script defer type="module" src="../../js/main.js"></script>
 	<style>
-	.navbar{
-		display: flex;
-		justify-content: space-between;
-	}
-
+  header {
+    height: 300px;
+  }
 	main{
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
+    margin-top: -120px;
 	}
 
-	@media screen and (min-width: 960px) {
-		header{
-			display: block;
-			width: 100%;
-			height: 250px;
-		}
-		.navbar .navbar__logo{
-			margin-block: 0;
-			max-width: 30px;
-		}
-		.navbar{
-			align-items: center;
-			padding: 2rem 5rem;
-			height: 100px;
-		}
-		.navbar a{
-			padding: 0;
-		}
-		.navbar.fixed{
-			padding: 2rem 5rem;;
-			align-items: center;
-			max-width: 100%;
-			height: 70px;
-			top: 0;
-			right: 0;
-			left: 0;
-			box-shadow: 5px 0 30px rgba(#fff, 0.4)
-		}
 
-		.navbar.fixed .nav span{
-			display: inline-block;
-		}
-		.navbar .social-icons{
-			flex-direction: row;
-			position: static;
-		}
-		.navbar .fa-2x{
-			font-size: 1.5em;
-		}
-		.nav{
-			justify-self: flex-end;
-			flex-basis: 70%;
-		}
-		 .nav ul{
-			display: flex;
-			justify-content: flex-end;
-			align-items: center;
-			gap: 2rem;
-		}
-	}
 	</style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6BXTGBP1JN"></script>
@@ -83,33 +33,35 @@
 </script>
 </head>
 <body>
-	<header>
-		<div class="navbar">
-			<a href="/"><img src="/images/pj-logo.png" alt="" class="navbar__logo"></a>
-			<div class="nav">
-				<ul>
-					<li> <a href="/"><span>Home</span></a></li>
-					<li> <a href="/#about"><span>About me</span></a></li>
-					<li> <a href="/#projects"><span>Projects</span></a></li>
-					<li> <a href="/#blog"><span>Blog</span></a></li>
-					<li> <a href="/#contacts"><span>Contacts</span></a></li>
-				</ul>
-			</div>
-			<div class="social-icons">
-				<a href="https://twitter.com/idrissjuanito"><i class="fab fa-twitter fa-2x"></i></a>
-				<a href="https://github.com/idrissjuanito"><i class="fab fa-github fa-2x"></i></a>
-				<a href="https://www.linkedin.com/in/tchoffo-idriss-32a247179/"><i class="fab fa-linkedin fa-2x"></i></a>
-			</div>
-			<div class="menu-hamburger">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-		</div>
-	</header>
+  <header>
+            <div class="navbar">
+        <div class="container">
+          <a href="/"><img src="/images/projuanito_pw_whbl.png" class="navbar__logo"></a>
+          <div class="social-icons">
+            <a href="https://twitter.com/idrissjuanito"><i class="fab fa-twitter fa-2x"></i></a>
+            <a href="https://github.com/idrissjuanito"><i class="fab fa-github fa-2x"></i></a>
+            <a href="https://www.linkedin.com/in/tchoffo-idriss-32a247179/"><i class="fab fa-linkedin fa-2x"></i></a>
+          </div>
+          <div class="nav container">
+            <ul class="menu">
+              <li> <a href="/"><img src="/images/icons/home-icon.png" alt=""><span>Home</span></a></li>
+              <li> <a href="about"><i class="fas fa-user fa-2x"></i><span>About me</span></a></li>
+              <li> <a href="#projects"><i class="fas fa-project-diagram fa-2x"></i> <span>Projects</span></a></li>
+              <li> <a href="#blog"><i class="fas fa-blog fa-2x"></i><span>Blog</span></a></li>
+              <li> <a href="#contacts"><i class="fas fa-envelope fa-2x"></i><span>Contacts</span></a></li>
+            </ul>
+          </div>
+          <div class="menu-hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
 
-<main>
-	
+  </header>
+  <main>
+    
 
 
 <article>
@@ -363,65 +315,65 @@
 
 </article>
 
-<section id="blog" class="blogposts">
-    <div class="container">
-        <h2>Other Articles</h2>
-        <div class="posts">
-                <div class="post card">
-                    <img src="https://cdn.sanity.io/images/53zt2ahq/production/0930a08a184b1de912fe2fccb71ee123eaaa819c-5184x3456.jpg">
-                    <div>
-                        <div class="post__data">
-                            <div class="author">
-                                <i class="fas fa-user-circle"><span> Tchoffo Idriss&emsp;|</span></i>
-                            </div>
-                            <div class="date">
-                                <i class="fas fa-calendar-alt"><span> 2022-02-16&emsp;</span></i>
-                            </div>
-                        </div>
 
-                         <h3><a href="/posts/tech-skills-you-must-learn-for-optimal-productivity-at-work-or-with-studies/">Tech skills you must learn for optimal productivity at work or with studies</a></h3>
+ <section id="blog" class="blogposts">
+  <div class="container">
+    <h2>Blog posts</h2>
+    <div class="posts">
+          <div class="post card">
+              <a href="/posts/tech-skills-you-must-learn-for-optimal-productivity-at-work-or-with-studies/"><img src="https://cdn.sanity.io/images/53zt2ahq/production/0930a08a184b1de912fe2fccb71ee123eaaa819c-5184x3456.jpg"></a>
+              <div>
+                  <div class="post__data">
+                      <div class="author">
+                          <i class="fas fa-user-circle"><span> Tchoffo Idriss&emsp;|</span></i>
+                      </div>
+                      <div class="date">
+                          <i class="fas fa-calendar-alt"><span> 2022-02-16&emsp;</span></i>
+                      </div>
+                  </div>
+                  <h3><a href="/posts/tech-skills-you-must-learn-for-optimal-productivity-at-work-or-with-studies/">Tech skills you must learn for optimal productivity at work or with studies</a></h3>
+              </div>
+          </div>
+      
+          <div class="post card">
+              <a href="/posts/the-best-ways-to-make-money-as-a-web-developer-in-2022/"><img src="https://cdn.sanity.io/images/53zt2ahq/production/a6006b15d58b01147cfda075e8141192660ac420-2000x1333.jpg"></a>
+              <div>
+                  <div class="post__data">
+                      <div class="author">
+                          <i class="fas fa-user-circle"><span> Tchoffo Idriss&emsp;|</span></i>
+                      </div>
+                      <div class="date">
+                          <i class="fas fa-calendar-alt"><span> 2022-02-16&emsp;</span></i>
+                      </div>
+                  </div>
+                  <h3><a href="/posts/the-best-ways-to-make-money-as-a-web-developer-in-2022/">The best ways to make money as a web developer in 2022</a></h3>
+              </div>
+          </div>
+      
+          <div class="post card">
+              <a href="/posts/let-s-talk-about-crypto-currencies-nfts-and-the-whole-blockchain-hype-on-the-web/"><img src="https://cdn.sanity.io/images/53zt2ahq/production/3920882dfb498c961ab2acc4c345d2aa6d3309a7-1920x1392.jpg"></a>
+              <div>
+                  <div class="post__data">
+                      <div class="author">
+                          <i class="fas fa-user-circle"><span> Tchoffo Idriss&emsp;|</span></i>
+                      </div>
+                      <div class="date">
+                          <i class="fas fa-calendar-alt"><span> 2022-02-16&emsp;</span></i>
+                      </div>
+                  </div>
+                  <h3><a href="/posts/let-s-talk-about-crypto-currencies-nfts-and-the-whole-blockchain-hype-on-the-web/">Let’s talk about crypto currencies, NFTs and the whole blockchain hype on the web</a></h3>
+              </div>
+          </div>
+      
 
-                    </div>
-                </div>
-                <div class="post card">
-                    <img src="https://cdn.sanity.io/images/53zt2ahq/production/a6006b15d58b01147cfda075e8141192660ac420-2000x1333.jpg">
-                    <div>
-                        <div class="post__data">
-                            <div class="author">
-                                <i class="fas fa-user-circle"><span> Tchoffo Idriss&emsp;|</span></i>
-                            </div>
-                            <div class="date">
-                                <i class="fas fa-calendar-alt"><span> 2022-02-16&emsp;</span></i>
-                            </div>
-                        </div>
+     </div>
+  </div>
+ </section>
 
-                         <h3><a href="/posts/the-best-ways-to-make-money-as-a-web-developer-in-2022/">The best ways to make money as a web developer in 2022</a></h3>
 
-                    </div>
-                </div>
-                <div class="post card">
-                    <img src="https://cdn.sanity.io/images/53zt2ahq/production/3920882dfb498c961ab2acc4c345d2aa6d3309a7-1920x1392.jpg">
-                    <div>
-                        <div class="post__data">
-                            <div class="author">
-                                <i class="fas fa-user-circle"><span> Tchoffo Idriss&emsp;|</span></i>
-                            </div>
-                            <div class="date">
-                                <i class="fas fa-calendar-alt"><span> 2022-02-16&emsp;</span></i>
-                            </div>
-                        </div>
+  </main>
 
-                         <h3><a href="/posts/let-s-talk-about-crypto-currencies-nfts-and-the-whole-blockchain-hype-on-the-web/">Let’s talk about crypto currencies, NFTs and the whole blockchain hype on the web</a></h3>
-
-                    </div>
-                </div>
-        </div>
-    </div>
-</section>
-
-</main>
-
-<footer>
+  <footer>
 		<div class="container">
 			<p>idrissjuanito@afrosilicon.com</p>
 			<div class="social-icons flex">
@@ -469,9 +421,9 @@
 			</ul>
 		</div>
 	</footer>
-	<div class="post-content"></div>
-	<div class="go-back-top">
-		<span></span><span></span>
-	</div>
+    <div class="post-content"></div>
+    <div class="go-back-top">
+      <span></span><span></span>
+    </div>
 </body>
 </html>
