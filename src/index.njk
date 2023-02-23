@@ -17,24 +17,24 @@ layout: base.njk
    <div class="about__right">
     <ul>
      <li class="card">
-      <i class="fa fa-file-code fa-2x"></i>
-      <h3>Web Developper</h3>
+      <i class="fa-solid fa-code fa-2x"></i>
+      <h3>Web Development</h3>
      </li>
      <li class="card">
-      <i class="fa fa-bullhorn fa-2x"></i>
-      <h3>Digital Marketer</h3>
+       <i class="fa-solid fa-cloud fa-2x"></i>
+      <h3>Cloud Computing</h3>
      </li>
      <li class="card">
-      <i class="fas fa-pen-alt fa-2x"></i>
-      <h3>Content Creator</h3>
+      <i class="fa-solid fa-feather fa-2x"></i>
+      <h3>Content Creation</h3>
      </li>
      <li class="card">
-      <i class="fa fa-lightbulb fa-2x"></i>
+      <i class="fa-solid fa-lightbulb fa-2x"></i>
       <h3>IT Consultant</h3>
      </li>
      <li class="card">
         <i class="fa fa-laptop-code fa-2x"></i>
-      <h3>Freelancer</h2>
+      <h3>Freelancing</h2>
      </li>
     </ul>
    </div>
@@ -42,11 +42,55 @@ layout: base.njk
  </section>
  <section class="daily-tools">
     <div class="container">
-        <h2>Top Skills</h2>
+        <h2>Top Skills & Tools</h2>
         <div class="tools grid">
             <div class="card tool">
                 <img src="./images/icons/google.png" alt="google">
                 <p>Google Search</p>
+            </div>
+            <div class="card tool">
+                <img src="./images/icons/vscode+icons+type+typescript-1324451507894042344.png" alt="Typescript">
+                <p>Typescript</p>
+            </div>
+            <div class="card tool">
+                <img src="./images/icons/React-icon.svg.png" alt="React Js">
+                <p>React</p>
+            </div>
+            <div class="card tool">
+                <img src="./images/icons/nodejs.svg" alt="Node JS">
+                <p>Node JS</p>
+            </div>
+            <div class="card tool">
+                <img src="./images/icons/nextjs.svg" alt="NextJS">
+                <p>Next JS</p>
+            </div>
+            <div class="card tool">
+                <img src="./images/icons/tailwind-css.svg" alt="tailwind-css">
+                <p>Tailwindcss</p>
+            </div>
+            <div class="card tool">
+                <img src="./images/icons/sass_logo.svg" alt="Sass scss">
+                <p>Sass</p>
+            </div>
+            <div class="card tool">
+                <img src="./images/icons/vim_vim.svg" alt="Vim">
+                <p>Vim</p>
+            </div>
+            <div class="card tool">
+                <img src="./images/icons/Firebase.svg" alt="Firebase">
+                <p>Firebase</p>
+            </div>
+            <div class="card tool">
+                <img src="./images/icons/Git-Logo.svg" alt="Git">
+                <p>Git</p>
+            </div>
+            <div class="card tool">
+                <img src="./images/icons/aws.svg" alt="aws">
+                <p>AWS</p>
+            </div>
+            <div class="card tool">
+                <img src="./images/icons/docker.svg" alt="Docker">
+                <p>Docker</p>
             </div>
             <div class="card tool">
                 <img src="./images/icons/wordpress.png" alt="WordPress">
@@ -55,18 +99,6 @@ layout: base.njk
             <div class="card tool">
                 <img src="./images/icons/Figma.svg" alt="Figma">
                 <p>Figma - UI/UX</p>
-            </div>
-            <div class="card tool">
-                <img src="./images/icons/vscode+icons+type+typescript-1324451507894042344.png" alt="Typescript">
-                <p>Typescript</p>
-            </div>
-            <div class="card tool">
-                <img src="./images/icons/React-icon.svg.png" alt="VS Code">
-                <p>React</p>
-            </div>
-            <div class="card tool">
-                <img src="./images/icons/nodejs-icon-17.jpeg" alt="Git Version Control">
-                <p>Node JS</p>
             </div>
         </div>
     </div>
@@ -96,30 +128,5 @@ layout: base.njk
         </div>
     </div>
  </section>
-
- <section id="blog" class="blogposts">
-  <div class="container">
-    <h2>Blog posts</h2>
-    <div class="posts">
-
-{%- for article in articles %}
-    <div class="post card">
-        <img src="{{article.featured_image}}">
-        <div>
-            <div class="post__data">
-                <div class="author">
-                    <i class="fas fa-user-circle"><span> {{article.author}}&emsp;|</span></i>
-                </div>
-                <div class="date">
-                    <i class="fas fa-calendar-alt"><span> {{article.publishedAt}}&emsp;</span></i>
-                </div>
-            </div>
-            <h3><a href="/posts/{{article.slug.current | slug }}/">{{article.title}}</a></h3>
-        </div>
-    </div>
-{% endfor %}
-
-     </div>
-  </div>
- </section>
+  {% include "other_articles.njk" %}
 </main>

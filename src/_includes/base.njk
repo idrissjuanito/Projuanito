@@ -7,7 +7,7 @@
 	<title>{{ title }}</title>
 	<link rel="stylesheet" href="./css/styles.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="icon" href="/images/icons/projuanito_pw_red.png" type="image/png">
+	<link rel="icon" href="/images/icons/projuanito_wh_bg.png" type="image/png">
 	<script defer type="module" src="./js/main.js"></script>
 	<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/cc48548f3475ac3d8e1b6573a/3617818e6eae896a9015c2bca.js");</script>
     <!-- Google tag (gtag.js) -->
@@ -21,7 +21,16 @@
 </script>
 </head>
 <body>
-{% include "header.njk" %}
+
+
+<header>
+  {% include "navigation.njk" %}
+  <div class="hero container">
+      <h1>Hello,<br/> I'm <span>Juanito</span></h1>
+      <p> I am a fullstack developer and an aspiring cloud computing Engineer. I explore and use web development tools to build functional and reliable Web Apps </p>
+      <a href="#about">More About me</a>
+  </div>
+</header>
 
 {{ content | safe }}
 

@@ -1,10 +1,10 @@
 @import "variables";
 
 .container {
-  width: 95%;
+  width: 90%;
   max-width: 1326px;
   margin: 0 auto;
-  overflow: hidden;
+  overflow: auto;
 }
 .grid {
   display: grid;
@@ -21,22 +21,4 @@
 }
 .container.reveal {
   animation: fade-in-bottom 2s ease-in-out forwards;
-}
-.fa-file-code {
-  color: #ff5f5f;
-}
-.fa-bullhorn {
-  color: #ff9148;
-}
-.person-icon {
-  width: 1.3em;
-}
-.fa-pen-alt {
-  color: #48ffc8;
-}
-.fa-lightbulb {
-  color: #ffcf4a;
-}
-.fa-laptop-code {
-  color: #5decff;
 }

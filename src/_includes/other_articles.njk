@@ -1,0 +1,26 @@
+
+ <section id="blog" class="blogposts">
+  <div class="container">
+    <h2>Blog posts</h2>
+    <div class="posts">
+
+      {%- for article in articles %}
+          <div class="post card">
+              <a href="/posts/{{article.slug.current | slug }}/"><img src="{{article.featured_image}}"></a>
+              <div>
+                  <div class="post__data">
+                      <div class="author">
+                          <i class="fas fa-user-circle"><span> {{article.author}}&emsp;|</span></i>
+                      </div>
+                      <div class="date">
+                          <i class="fas fa-calendar-alt"><span> {{article.publishedAt}}&emsp;</span></i>
+                      </div>
+                  </div>
+                  <h3><a href="/posts/{{article.slug.current | slug }}/">{{article.title}}</a></h3>
+              </div>
+          </div>
+      {% endfor %}
+
+     </div>
+  </div>
+ </section>

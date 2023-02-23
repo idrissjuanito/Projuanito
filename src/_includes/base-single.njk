@@ -7,70 +7,20 @@
 	<title>{{ title }}</title>
 	<link rel="stylesheet" href="../../css/styles.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="icon" href="../../images/icons/pj-favicon.png" type="image/png">
+	<link rel="icon" href="/images/icons/projuanito_wh_bg.png" type="image/png">
 	<script defer type="module" src="../../js/main.js"></script>
 	<style>
-	.navbar{
-		display: flex;
-		justify-content: space-between;
-	}
-
+  header {
+    height: 300px;
+  }
 	main{
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
+    margin-top: -120px;
 	}
 
-	@media screen and (min-width: 960px) {
-		header{
-			display: block;
-			width: 100%;
-			height: 250px;
-		}
-		.navbar .navbar__logo{
-			margin-block: 0;
-			max-width: 30px;
-		}
-		.navbar{
-			align-items: center;
-			padding: 2rem 5rem;
-			height: 100px;
-		}
-		.navbar a{
-			padding: 0;
-		}
-		.navbar.fixed{
-			padding: 2rem 5rem;;
-			align-items: center;
-			max-width: 100%;
-			height: 70px;
-			top: 0;
-			right: 0;
-			left: 0;
-			box-shadow: 5px 0 30px rgba(#fff, 0.4)
-		}
 
-		.navbar.fixed .nav span{
-			display: inline-block;
-		}
-		.navbar .social-icons{
-			flex-direction: row;
-			position: static;
-		}
-		.navbar .fa-2x{
-			font-size: 1.5em;
-		}
-		.nav{
-			justify-self: flex-end;
-			flex-basis: 70%;
-		}
-		 .nav ul{
-			display: flex;
-			justify-content: flex-end;
-			align-items: center;
-			gap: 2rem;
-		}
-	}
 	</style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6BXTGBP1JN"></script>
@@ -83,16 +33,17 @@
 </script>
 </head>
 <body>
-{% include "single-header.njk" %}
+  <header>
+      {% include "navigation.njk" %}
+  </header>
+  <main>
+    {{ content | safe }}
+  </main>
 
-<main>
-	{{ content | safe }}
-</main>
-
-{% include "footer.njk" %}
-	<div class="post-content"></div>
-	<div class="go-back-top">
-		<span></span><span></span>
-	</div>
+  {% include "footer.njk" %}
+    <div class="post-content"></div>
+    <div class="go-back-top">
+      <span></span><span></span>
+    </div>
 </body>
 </html>
