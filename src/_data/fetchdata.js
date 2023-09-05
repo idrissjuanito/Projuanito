@@ -3,7 +3,6 @@ const axios = require("axios");
 
 const url = process.env.SANITY_URL;
 const auth_token = process.env.AUTH_TOKEN;
-const axios = require("axios");
 
 async function fetchData(url, token) {
   try {
@@ -35,36 +34,30 @@ module.exports = async function processData(){
         for(let content of data){
             let type = content._type+"s";
             eval(type).push(content)
+        }
 
-    let posts = [];
-    let authors = [];
-    let pages = [];
 
-    for (let content of data) {
-      let type = content._type + "s";
-      eval(type).push(content);
+        posts.forEach((post) => {
+          post.author = getAuthor(authors, post.author._ref);
+          let postImageRef = post.mainImage.asset._ref.slice(6, -4);
+          post.featured_image = `https://cdn.sanity.io/images/53zt2ahq/production/${postImageRef}.jpg`;
+        });
+
+        pages.forEach((page) => {
+          page.excerpt = page.body.slice(0, 80);
+        });
+
+        return {
+          posts,
+          pages,
+        };
+    } catch (error) {
+        console.log(
+            "there was an error while processing the data you requested: " +
+            error.message
+        );
     }
-
-    posts.forEach((post) => {
-      post.author = getAuthor(authors, post.author._ref);
-      let postImageRef = post.mainImage.asset._ref.slice(6, -4);
-      post.featured_image = `https://cdn.sanity.io/images/53zt2ahq/production/${postImageRef}.jpg`;
-    });
-
-    pages.forEach((page) => {
-      page.excerpt = page.body.slice(0, 80);
-    });
-    return {
-      posts,
-      pages,
-    };
-  } catch (error) {
-    console.log(
-      "there was an error while processing the data you requested: " +
-        error.message
-    );
-  }
-};
+}
 
 function getAuthor(authList, id){
     let authorName;
