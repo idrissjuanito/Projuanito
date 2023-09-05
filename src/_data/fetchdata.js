@@ -36,7 +36,6 @@ module.exports = async function processData(){
             eval(type).push(content)
         }
 
-
         posts.forEach((post) => {
           post.author = getAuthor(authors, post.author._ref);
           let postImageRef = post.mainImage.asset._ref.slice(6, -4);
