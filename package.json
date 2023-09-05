@@ -1,7 +1,7 @@
 {
   "name": "projuanito.com",
   "version": "1.0.0",
-  "description": "This the first version i built for the site. Did not use any dependencies or any know worklow technique. just went a head did everything from scratch with beginner knowledge of JS.",
+  "description": "Jamstack with sanity, eleventy, sass ",
   "source": "./src/index.html",
   "scripts": {
     "start": "eleventy --serve --port 8081",
