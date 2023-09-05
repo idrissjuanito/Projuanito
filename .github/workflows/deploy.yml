@@ -5,7 +5,7 @@ on:
     branches: [live]
 env: 
   AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
-  SANITY_URL: ${{ variables.SANITY_URL }}
+  SANITY_URL: ${{ secrets.SANITY_URL }}
 jobs:
   deploy:
     runs-on: ubuntu-latest
