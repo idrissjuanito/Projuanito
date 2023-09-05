@@ -15,8 +15,11 @@ jobs:
         with:
           node-version: '16.x'
       - run: echo "$AUTH_TOKEN"
-      - name: Install Sass
+
+      - name: make css dir for sass compile
         run: mkdir src/css
+
+      - name: Install Sass
         uses: gha-utilities/sass-build@v0.5.1
         with:
           source: src/scss/main.scss
