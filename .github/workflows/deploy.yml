@@ -28,6 +28,6 @@ jobs:
       - run: npm run build
       - uses: peaceiris/actions-gh-pages@v3
         with:
-          publish_dir: dist
+          publish_dir: .
           publish_branch: live-build
           github_token: ${{ secrets.GITHUB_TOKEN }}
