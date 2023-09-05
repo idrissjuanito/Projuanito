@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-const url = "https://53zt2ahq.api.sanity.io/v1/data/query/production?query=*%5B_type%20in%20%5B%22post%22%2C%20%22author%22%2C%20%22page%22%5D%5D";
+const url = process.env.SANITY_URL;
 const auth_token = process.env.AUTH_TOKEN;
 const axios = require("axios");
 
