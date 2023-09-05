@@ -36,7 +36,28 @@
         opacity: 1;
     }
 }
-
+@keyframes screw-top{
+  0%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(7px);
+  }
+  100%{
+    transform: translateY(7px) rotate(-45deg);
+  }
+}
+@keyframes screw-bottom{
+  0%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(-7px);
+  }
+  100%{
+    transform: translateY(-7px) rotate(45deg);
+  }
+}
 @keyframes slide-in-left {
     0%{
         left: -10%;

@@ -1,8 +1,9 @@
 require("dotenv").config();
 const axios = require("axios");
 
-const token = process.env.AUTH_TOKEN;
 const url = process.env.SANITY_URL;
+const auth_token = process.env.AUTH_TOKEN;
+const axios = require("axios");
 
 async function fetchData(url, token) {
   try {
@@ -23,9 +24,17 @@ async function fetchData(url, token) {
   }
 }
 
-module.exports = async function processData() {
-  try {
-    const data = await fetchData(url, token);
+module.exports = async function processData(){
+    try {
+        const data = await fetchData(url, auth_token);
+    
+        let posts = [];
+        let authors = [];
+        let pages = [];
+    
+        for(let content of data){
+            let type = content._type+"s";
+            eval(type).push(content)
 
     let posts = [];
     let authors = [];
@@ -57,10 +66,11 @@ module.exports = async function processData() {
   }
 };
 
-function getAuthor(authList, id) {
-  let authorName;
-  authList.forEach((author) => {
-    if (author._id === id) authorName = author.name;
-  });
-  return authorName;
+function getAuthor(authList, id){
+    let authorName;
+    authList.forEach((author) => {
+        if(author._id === id) authorName = author.name
+    })
+    return authorName
 }
+
