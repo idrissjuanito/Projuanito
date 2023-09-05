@@ -1,0 +1,45 @@
+---
+layout: base-single.njk
+pagination:
+    data: fetchdata.posts
+    size: 1
+    alias: singlearticle
+permalink: "/posts/{{ singlearticle.slug.current|slug }}/"
+---
+
+{% set articles = fetchdata.posts %}
+
+<article>
+
+    <h1>{{ singlearticle.title}}</h1>
+
+    <div class="post__data">
+        <div class="author">
+            <i class="fas fa-user-circle"><span>{{singlearticle.author}}&emsp;|</span></i>
+        </div>
+        <div class="date">
+            <i class="fas fa-calendar-alt"><span>{{singlearticle.publishedAt}}</span></i>
+        </div>
+    </div>
+
+    <img src="{{singlearticle.featured_image}}">
+
+    <div class="article__body">
+        {%- for blok in singlearticle.body %}
+            {% for blok_text in blok.children %}
+                {% if blok.style == "normal" and blok_text.text !== "" %}
+
+                    <p>{{blok_text.text | safe}}</p>
+
+                {% elif blok.style !== "normal" %}
+
+                    <h2>{{blok_text.text | safe}}</h2>
+
+                {% endif%}
+        {% endfor%}
+    {% endfor -%}
+    </div>
+
+</article>
+
+{% include "other_articles.njk" %}
