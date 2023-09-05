@@ -1,11 +1,11 @@
-name: deploy projuanito.com
+name: Build and deploy projuanito.com
 
 on:
   push:
     branches: [live]
 env: 
   AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
-  SANIT_URL: ${{ variables.SANITY_URL }}
+  SANITY_URL: ${{ variables.SANITY_URL }}
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -15,10 +15,15 @@ jobs:
         with:
           node-version: '16.x'
       - run: echo "$AUTH_TOKEN"
-      - run: npm i
+      - name: Install Sass
+        uses: gha-utilities/sass-build@v0.5.1
+        with:
+          source: src/scss/main.scss
+          destination: src/css/styles.css
+      - run: npm ci
       - run: npm run build
       - uses: peaceiris/actions-gh-pages@v3
         with:
-          publish_dir: dist
+          publish_dir: .
           publish_branch: live-build
           github_token: ${{ secrets.GITHUB_TOKEN }}
