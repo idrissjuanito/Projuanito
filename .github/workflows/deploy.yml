@@ -3,7 +3,7 @@ name: Build and deploy projuanito.com
 on:
   push:
     branches: [live]
-env: 
+env:
   AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
   SANITY_URL: ${{ secrets.SANITY_URL }}
 jobs:
@@ -16,6 +16,7 @@ jobs:
           node-version: '16.x'
       - run: echo "$AUTH_TOKEN"
       - name: Install Sass
+        run: mkdir src/css
         uses: gha-utilities/sass-build@v0.5.1
         with:
           source: src/scss/main.scss
